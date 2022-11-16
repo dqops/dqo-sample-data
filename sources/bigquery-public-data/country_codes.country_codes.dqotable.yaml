@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: country_codes
+    table_name: country_codes
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    country_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    alpha_2_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    alpha_3_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
