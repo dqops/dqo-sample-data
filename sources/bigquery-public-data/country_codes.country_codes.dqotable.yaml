@@ -26,6 +26,7 @@ spec:
       checks:
         nulls:
           max_nulls_count:
+            disabled: true
             error:
               max_count: 0
     alpha_2_code:
