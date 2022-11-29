@@ -1,0 +1,134 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: kaggle_covidlive
+    table_name: covid_live
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    Country:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    _Other:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    TotalCases:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    TotalDeaths:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    NewDeaths:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    TotalRecovered:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    ActiveCases:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Serious:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Critical:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Tot_Cases_1M_pop:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Deaths_1M_pop:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    TotalTests:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Tests_1M_pop:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Population:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_14:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_15:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_16:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_17:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_18:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_19:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_20:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_21:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_22:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_23:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_24:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_25:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_26:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_27:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_28:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_29:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    int64_field_30:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
