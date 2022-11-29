@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: thelook_ecommerce
+    table_name: users
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  data_streams:
+    level_1:
+      source: column_value
+      column: country
+  checks:
+    standard:
+      min_row_count:
+        error:
+          min_count: 100
+        fatal:
+          min_count: 10
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    first_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    last_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    email:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    age:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    gender:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    state:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    street_address:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    postal_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    city:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    country:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    latitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    longitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    traffic_source:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    created_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true

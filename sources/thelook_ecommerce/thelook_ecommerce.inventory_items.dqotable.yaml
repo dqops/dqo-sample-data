@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: thelook_ecommerce
+    table_name: inventory_items
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    product_id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    created_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    sold_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    cost:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    product_category:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    product_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    product_brand:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    product_retail_price:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    product_department:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    product_sku:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    product_distribution_center_id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true

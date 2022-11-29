@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: thelook_ecommerce
+    table_name: products
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    cost:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    category:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    brand:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    retail_price:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    department:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    sku:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    distribution_center_id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
