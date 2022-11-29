@@ -3,87 +3,78 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: thelook_ecommerce
-    table_name: users
+    schema_name: kaggle_datasets
+    table_name: uefa_champions_league_2016_2022_matches
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
-  data_streams:
-    level_1:
-      source: column_value
-      column: country
+  time_series:
+    mode: current_time
   columns:
     id:
       type_snapshot:
         column_type: INT64
         nullable: true
-      checks:
-        strings:
-          max_string_null_placeholder_count:
-            error:
-              max_count: 10
-            fatal:
-              max_count: 50
-    first_name:
+    datetime:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    team1:
       type_snapshot:
         column_type: STRING
         nullable: true
-    last_name:
+    team2:
       type_snapshot:
         column_type: STRING
         nullable: true
-    email:
+    team1_code:
       type_snapshot:
         column_type: STRING
         nullable: true
-    age:
+    team2_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    round:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    score1:
       type_snapshot:
         column_type: INT64
         nullable: true
-    gender:
+    score2:
       type_snapshot:
-        column_type: STRING
+        column_type: INT64
         nullable: true
-    state:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    street_address:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    postal_code:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    city:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    country:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    latitude:
+    adj_score1:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    longitude:
+    adj_score2:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    traffic_source:
+    chances1:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    chances2:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    moves1:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    moves2:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    group:
       type_snapshot:
         column_type: STRING
         nullable: true
-      checks:
-        strings:
-          max_string_length_below:
-            error:
-              max_value: 5.0
-          min_string_length_above:
-            error:
-              min_value: 8.0
-    created_at:
+    matchday:
       type_snapshot:
-        column_type: TIMESTAMP
+        column_type: FLOAT64
         nullable: true
