@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: kaggle_worldpopulation
+    table_name: world_population_dataset
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    Country__or_dependency_:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Population__2022_:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Yearly_change:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Net_change:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Density__P_Km___:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Land_Area__Km___:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Migrants__net_:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Fert__Rate:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Med_Age:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Urban_Pop__:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    World_Share:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true

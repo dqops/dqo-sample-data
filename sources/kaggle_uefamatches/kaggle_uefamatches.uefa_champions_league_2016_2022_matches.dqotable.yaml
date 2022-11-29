@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: kaggle_uefamatches
+    table_name: uefa_champions_league_2016_2022_matches
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    datetime:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    team1:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    team2:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    team1_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    team2_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    round:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    score1:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    score2:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    adj_score1:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    adj_score2:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    chances1:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    chances2:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    moves1:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    moves2:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    group:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    matchday:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true

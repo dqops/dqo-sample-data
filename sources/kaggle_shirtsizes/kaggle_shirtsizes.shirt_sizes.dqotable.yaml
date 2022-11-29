@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: kaggle_shirtsizes
+    table_name: shirt_sizes
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    BrandName:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Type:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Size:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    BrandSize:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Chest:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    FrontLength:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    AcrossShoulder:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
