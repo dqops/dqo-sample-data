@@ -76,13 +76,37 @@ spec:
         column_type: STRING
         nullable: true
       checks:
+        nulls:
+          max_nulls_count:
+            error:
+              max_count: 20
+            warning:
+              max_count: 10
+            fatal:
+              max_count: 40
+        numeric:
+          max_negative_count:
+            error:
+              max_count: 10
+            warning:
+              max_count: 5
+            fatal:
+              max_count: 20
         strings:
           max_string_length_below:
             error:
+              max_value: 2.0
+            warning:
+              max_value: 1.0
+            fatal:
               max_value: 5.0
           min_string_length_above:
             error:
-              min_value: 8.0
+              min_value: 2.0
+            warning:
+              min_value: 1.0
+            fatal:
+              min_value: 5.0
     created_at:
       type_snapshot:
         column_type: TIMESTAMP
