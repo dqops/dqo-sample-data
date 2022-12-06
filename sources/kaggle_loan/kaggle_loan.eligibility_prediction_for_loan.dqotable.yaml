@@ -60,3 +60,8 @@ spec:
       type_snapshot:
         column_type: BOOL
         nullable: true
+  comments:
+  - date: 2022-12-06T12:30:43.816+00:00
+    comment_by: user
+    comment: 'https://www.kaggle.com/datasets/devzohaib/eligibility-prediction-for-loan;
+      Author:DEVZOHAIB '
