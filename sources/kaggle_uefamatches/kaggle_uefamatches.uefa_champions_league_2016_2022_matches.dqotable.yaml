@@ -76,3 +76,8 @@ spec:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
+  comments:
+  - date: 2022-12-06T13:03:19.459+00:00
+    comment_by: user
+    comment: 'https://www.kaggle.com/datasets/cbxkgl/uefa-champions-league-2016-2022-data;
+      Author:CIBI '
