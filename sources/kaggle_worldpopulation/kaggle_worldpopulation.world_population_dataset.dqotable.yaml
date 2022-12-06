@@ -52,3 +52,8 @@ spec:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
+  comments:
+  - date: 2022-12-06T12:39:14.587+00:00
+    comment_by: user
+    comment: "https://www.kaggle.com/datasets/ahmadjalalmasood123/world-population-dataset;\
+      \ Author:  AHMAD JALAL MASOOD"
