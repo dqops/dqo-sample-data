@@ -36,3 +36,8 @@ spec:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
+  comments:
+  - date: 2022-12-06T12:37:19.864+00:00
+    comment_by: user
+    comment: "https://www.kaggle.com/datasets/saikumartamminana/shirt-size-recommendation;\
+      \ Author:  SAIKUMAR TAMMINANA"
