@@ -13,10 +13,10 @@ spec:
     daily:
       standard:
         daily_partition_min_row_count:
-          warning:
-            min_count: 800
           error:
             min_count: 600
+          warning:
+            min_count: 800
           fatal:
             min_count: 300
   columns:
@@ -68,6 +68,15 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
+      checks:
+        nulls:
+          max_nulls_count:
+            error:
+              max_count: 50
+            warning:
+              max_count: 40
+            fatal:
+              max_count: 60
     incident_zip:
       type_snapshot:
         column_type: INT64

@@ -1,0 +1,113 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: thelook_ecommerce
+    table_name: users
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  data_streams:
+    level_1:
+      source: column_value
+      column: country
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+      checks:
+        strings:
+          max_string_null_placeholder_count:
+            error:
+              max_count: 10
+            fatal:
+              max_count: 50
+    first_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    last_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    email:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    age:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    gender:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    state:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    street_address:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    postal_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    city:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    country:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    latitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    longitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    traffic_source:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+      checks:
+        nulls:
+          max_nulls_count:
+            error:
+              max_count: 20
+            warning:
+              max_count: 10
+            fatal:
+              max_count: 40
+        numeric:
+          max_negative_count:
+            error:
+              max_count: 10
+            warning:
+              max_count: 5
+            fatal:
+              max_count: 20
+        strings:
+          max_string_length_below:
+            error:
+              max_value: 2.0
+            warning:
+              max_value: 1.0
+            fatal:
+              max_value: 5.0
+          min_string_length_above:
+            error:
+              min_value: 2.0
+            warning:
+              min_value: 1.0
+            fatal:
+              min_value: 5.0
+    created_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
