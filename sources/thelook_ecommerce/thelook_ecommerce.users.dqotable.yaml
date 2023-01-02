@@ -17,12 +17,21 @@ spec:
         column_type: INT64
         nullable: true
       checks:
+        numeric:
+          max_negative_count:
+            error:
+              max_count: 10
         strings:
           max_string_null_placeholder_count:
+            disabled: true
             error:
               max_count: 10
             fatal:
               max_count: 50
+          max_string_null_placeholder_percent:
+            disabled: true
+            error:
+              max_percent: 2.0
     first_name:
       type_snapshot:
         column_type: STRING
@@ -86,6 +95,7 @@ spec:
               max_count: 40
         numeric:
           max_negative_count:
+            disabled: true
             error:
               max_count: 10
             warning:

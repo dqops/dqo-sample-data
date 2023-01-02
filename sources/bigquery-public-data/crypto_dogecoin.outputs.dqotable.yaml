@@ -3,57 +3,52 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: kaggle_worldpopulation
-    table_name: world_population_dataset
+    schema_name: crypto_dogecoin
+    table_name: outputs
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
   columns:
-    Country__or_dependency_:
+    transaction_hash:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Population__2022_:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Yearly_change:
-      type_snapshot:
-        column_type: FLOAT64
-        nullable: true
-    Net_change:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Density__P_Km___:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Land_Area__Km___:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Migrants__net_:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Fert__Rate:
+    block_hash:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Med_Age:
+    block_number:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    block_timestamp:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    index:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    script_asm:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Urban_Pop__:
+    script_hex:
       type_snapshot:
         column_type: STRING
         nullable: true
-    World_Share:
+    required_signatures:
       type_snapshot:
-        column_type: FLOAT64
+        column_type: INT64
         nullable: true
-  comments:
-  - date: 2022-12-06T12:39:14.587+00:00
-    comment_by: user
-    comment: "https://www.kaggle.com/datasets/ahmadjalalmasood123/world-population-dataset;\
-      \ Author:  AHMAD JALAL MASOOD"
+    type:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    addresses:
+      type_snapshot:
+        column_type: ARRAY<STRING>
+        nullable: false
+    value:
+      type_snapshot:
+        column_type: NUMERIC
+        nullable: true

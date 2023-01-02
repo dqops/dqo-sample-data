@@ -3,57 +3,65 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: kaggle_worldpopulation
-    table_name: world_population_dataset
+    schema_name: maven_restaurant_ratings
+    table_name: consumers
   timestamp_columns:
+    event_timestamp_column: Drink_Level
     partitioned_checks_timestamp_source: event_timestamp
   columns:
-    Country__or_dependency_:
+    Consumer_ID:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Population__2022_:
+    City:
       type_snapshot:
-        column_type: INT64
+        column_type: STRING
         nullable: true
-    Yearly_change:
+    State:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Country:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Latitude:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    Net_change:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Density__P_Km___:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Land_Area__Km___:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Migrants__net_:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Fert__Rate:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    Med_Age:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    Urban_Pop__:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    World_Share:
+    Longitude:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-  comments:
-  - date: 2022-12-06T12:39:14.587+00:00
-    comment_by: user
-    comment: "https://www.kaggle.com/datasets/ahmadjalalmasood123/world-population-dataset;\
-      \ Author:  AHMAD JALAL MASOOD"
+    Smoker:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    Drink_Level:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Transportation_Method:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Marital_Status:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Children:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Age:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Occupation:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Budget:
+      type_snapshot:
+        column_type: STRING
+        nullable: true

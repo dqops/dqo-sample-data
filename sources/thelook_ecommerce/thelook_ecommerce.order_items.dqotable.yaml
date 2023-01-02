@@ -6,6 +6,7 @@ spec:
     schema_name: thelook_ecommerce
     table_name: order_items
   timestamp_columns:
+    event_timestamp_column: created_at
     partitioned_checks_timestamp_source: event_timestamp
   columns:
     id:

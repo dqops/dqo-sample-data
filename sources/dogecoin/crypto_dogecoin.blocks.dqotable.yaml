@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: crypto_dogecoin
+    table_name: blocks
+  filter: '`timestamp`>="2022-11-20"'
+  timestamp_columns:
+    event_timestamp_column: timestamp
+    partitioned_checks_timestamp_source: event_timestamp
+  checkpoints:
+    daily:
+      standard:
+        daily_checkpoint_min_row_count:
+          error:
+            min_count: 2
+          warning:
+            min_count: 1
+          fatal:
+            min_count: 3
+      timeliness:
+        daily_checkpoint_max_days_since_most_recent_event:
+          error:
+            max_count: 55
+  columns:
+    hash:
+      type_snapshot:
+        column_type: STRING
+        nullable: false
+    size:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    stripped_size:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    weight:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    number:
+      type_snapshot:
+        column_type: INT64
+        nullable: false
+    version:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    merkle_root:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    timestamp:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: false
+    timestamp_month:
+      type_snapshot:
+        column_type: DATE
+        nullable: false
+    nonce:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    bits:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    coinbase_param:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    transaction_count:
+      type_snapshot:
+        column_type: INT64
+        nullable: true

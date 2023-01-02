@@ -3,57 +3,72 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: thelook_ecommerce
-    table_name: inventory_items
+    schema_name: maven_restaurant_ratings
+    table_name: restaurants
   timestamp_columns:
-    event_timestamp_column: created_at
+    event_timestamp_column: Area
     partitioned_checks_timestamp_source: event_timestamp
   columns:
-    id:
+    Restaurant_ID:
       type_snapshot:
         column_type: INT64
         nullable: true
-    product_id:
+    Name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    City:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    State:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Country:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+      checks:
+        strings:
+          min_regex_match_percent:
+            parameters:
+              regex: Mexico
+            error:
+              min_percent: 100.0
+    Zip_Code:
       type_snapshot:
         column_type: INT64
         nullable: true
-    created_at:
-      type_snapshot:
-        column_type: TIMESTAMP
-        nullable: true
-    sold_at:
-      type_snapshot:
-        column_type: TIMESTAMP
-        nullable: true
-    cost:
+    Latitude:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    product_category:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    product_name:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    product_brand:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    product_retail_price:
+    Longitude:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    product_department:
+    Alcohol_Service:
       type_snapshot:
         column_type: STRING
         nullable: true
-    product_sku:
+    Smoking_Allowed:
       type_snapshot:
         column_type: STRING
         nullable: true
-    product_distribution_center_id:
+    Price:
       type_snapshot:
-        column_type: INT64
+        column_type: STRING
+        nullable: true
+    Franchise:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    Area:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Parking:
+      type_snapshot:
+        column_type: STRING
         nullable: true

@@ -6,7 +6,43 @@ spec:
     schema_name: thelook_ecommerce
     table_name: orders
   timestamp_columns:
+    event_timestamp_column: shipped_at
+    ingestion_timestamp_column: created_at
     partitioned_checks_timestamp_source: event_timestamp
+  checks:
+    timeliness:
+      days_since_most_recent_event:
+        error:
+          max_count: 0
+      data_ingestion_delay:
+        error:
+          max_count: 0
+      days_since_last_data_ingestion:
+        error:
+          max_count: 0
+  checkpoints:
+    daily:
+      timeliness:
+        daily_checkpoint_days_since_most_recent_event:
+          error:
+            max_count: 0
+        daily_checkpoint_data_ingestion_delay:
+          error:
+            max_count: 0
+        daily_checkpoint_days_since_last_data_ingestion:
+          error:
+            max_count: 0
+    monthly:
+      timeliness:
+        monthly_checkpoint_days_since_most_recent_event:
+          error:
+            max_count: 0
+        monthly_checkpoint_data_ingestion_delay:
+          error:
+            max_count: 0
+        monthly_checkpoint_days_since_last_data_ingestion:
+          error:
+            max_count: 0
   columns:
     order_id:
       type_snapshot:

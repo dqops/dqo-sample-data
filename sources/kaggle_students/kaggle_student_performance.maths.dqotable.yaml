@@ -3,162 +3,170 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: kaggle_covidlive
-    table_name: covid_live
+    schema_name: kaggle_student_performance
+    table_name: maths
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
   columns:
-    Country:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    _Other:
+    school:
       type_snapshot:
         column_type: STRING
         nullable: true
-    TotalCases:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-      checkpoints:
-        daily:
-          numeric:
-            daily_checkpoint_min_numbers_in_set_count:
-              parameters:
-                values:
-                - 20
-              error:
-                min_count: 2
-    TotalDeaths:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    NewDeaths:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    TotalRecovered:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    ActiveCases:
+    sex:
       type_snapshot:
         column_type: STRING
         nullable: true
+    age:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    address:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    famsize:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Pstatus:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Medu:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Fedu:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Mjob:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Fjob:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    reason:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    guardian:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    traveltime:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    studytime:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    failures:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    schoolsup:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    famsup:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    paid:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+      checks:
+        numeric:
+          min_numbers_in_set_percent:
+            parameters:
+              values:
+              - 1
+            error:
+              min_percent: 25.0
+            warning:
+              min_percent: 23.0
+            fatal:
+              min_percent: 12.0
+        strings:
+          min_string_boolean_placeholder_percent:
+            error:
+              min_percent: 100.0
+            warning:
+              min_percent: 99.0
+            fatal:
+              min_percent: 95.0
       checkpoints:
         daily:
-          nulls:
-            daily_checkpoint_max_nulls_percent:
+          bool:
+            daily_checkpoint_min_true_percent:
               error:
-                max_percent: 10.0
+                min_percent: 80.0
+              warning:
+                min_percent: 85.0
               fatal:
-                max_percent: 25.0
-    Serious:
+                min_percent: 70.0
+    activities:
       type_snapshot:
-        column_type: STRING
+        column_type: BOOL
         nullable: true
-      checkpoints:
-        daily:
-          strings:
-            daily_checkpoint_min_string_boolean_placeholder_percent:
-              error:
-                min_percent: 5.0
-              fatal:
-                min_percent: 10.0
-    Critical:
+    nursery:
       type_snapshot:
-        column_type: STRING
+        column_type: BOOL
         nullable: true
-    Tot_Cases_1M_pop:
+    higher:
       type_snapshot:
-        column_type: STRING
+        column_type: BOOL
         nullable: true
-    Deaths_1M_pop:
+    internet:
       type_snapshot:
-        column_type: INT64
+        column_type: BOOL
         nullable: true
-    TotalTests:
+    romantic:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    famrel:
       type_snapshot:
         column_type: INT64
         nullable: true
-    Tests_1M_pop:
+    freetime:
       type_snapshot:
         column_type: INT64
         nullable: true
-    Population:
+    goout:
       type_snapshot:
         column_type: INT64
         nullable: true
-    int64_field_14:
+    Dalc:
       type_snapshot:
         column_type: INT64
         nullable: true
-    int64_field_15:
+    Walc:
       type_snapshot:
         column_type: INT64
         nullable: true
-    int64_field_16:
+    health:
       type_snapshot:
         column_type: INT64
         nullable: true
-    int64_field_17:
+    absences:
       type_snapshot:
         column_type: INT64
         nullable: true
-    int64_field_18:
+    G1:
       type_snapshot:
         column_type: INT64
         nullable: true
-    int64_field_19:
+    G2:
       type_snapshot:
         column_type: INT64
         nullable: true
-    int64_field_20:
+    G3:
       type_snapshot:
         column_type: INT64
         nullable: true
-    int64_field_21:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    int64_field_22:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    int64_field_23:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    int64_field_24:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    int64_field_25:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    int64_field_26:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    int64_field_27:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    int64_field_28:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    int64_field_29:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    int64_field_30:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-  comments:
-  - date: 2022-12-06T11:58:14.937+00:00
-    comment_by: user
-    comment: "https://www.kaggle.com/datasets/whenamancodes/covid-19-coronavirus-pandemic-dataset;\
-      \ Author: AMAN CHAUHAN"

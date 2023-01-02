@@ -3,57 +3,64 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: kaggle_worldpopulation
-    table_name: world_population_dataset
+    schema_name: dqo_testing_time_lag
+    table_name: crypto_dash_blocks
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
   columns:
-    Country__or_dependency_:
+    hash:
+      type_snapshot:
+        column_type: STRING
+        nullable: false
+    size:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    stripped_size:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    weight:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    number:
+      type_snapshot:
+        column_type: INT64
+        nullable: false
+    version:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    merkle_root:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Population__2022_:
+    timestamp:
       type_snapshot:
-        column_type: INT64
-        nullable: true
-    Yearly_change:
+        column_type: TIMESTAMP
+        nullable: false
+    timestamp_month:
       type_snapshot:
-        column_type: FLOAT64
-        nullable: true
-    Net_change:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Density__P_Km___:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Land_Area__Km___:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Migrants__net_:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Fert__Rate:
+        column_type: DATE
+        nullable: false
+    nonce:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Med_Age:
+    bits:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Urban_Pop__:
+    coinbase_param:
       type_snapshot:
         column_type: STRING
         nullable: true
-    World_Share:
+    transaction_count:
       type_snapshot:
-        column_type: FLOAT64
+        column_type: INT64
         nullable: true
-  comments:
-  - date: 2022-12-06T12:39:14.587+00:00
-    comment_by: user
-    comment: "https://www.kaggle.com/datasets/ahmadjalalmasood123/world-population-dataset;\
-      \ Author:  AHMAD JALAL MASOOD"
+    inserted_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: false
