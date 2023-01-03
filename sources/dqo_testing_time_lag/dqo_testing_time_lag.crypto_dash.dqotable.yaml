@@ -3,22 +3,33 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: crypto_dogecoin
-    table_name: blocks
+    schema_name: dqo_testing_time_lag
+    table_name: crypto_dash
   filter: '`timestamp`>="2022-11-20"'
   timestamp_columns:
     event_timestamp_column: timestamp
+    ingestion_timestamp_column: inserted_at
     partitioned_checks_timestamp_source: event_timestamp
   checkpoints:
     daily:
-      standard:
-        daily_checkpoint_min_row_count:
+      timeliness:
+        daily_checkpoint_days_since_most_recent_event:
           error:
-            min_count: 2
-          warning:
-            min_count: 1
+            max_days: 1.0
           fatal:
-            min_count: 3
+            max_days: 3.0
+        daily_checkpoint_data_ingestion_delay:
+          error:
+            max_days: 1.0
+          fatal:
+            max_days: 3.0
+        daily_checkpoint_days_since_most_recent_ingestion:
+          error:
+            max_days: 1.0
+          fatal:
+            max_days: 3.0
+  schedule_override:
+    cron_expression: 15 20 * * *
   columns:
     hash:
       type_snapshot:
@@ -72,3 +83,7 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
+    inserted_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: false

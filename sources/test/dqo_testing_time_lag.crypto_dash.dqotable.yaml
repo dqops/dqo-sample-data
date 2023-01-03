@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_testing_time_lag
+    table_name: crypto_dash
+  timestamp_columns:
+    event_timestamp_column: timestamp
+    ingestion_timestamp_column: "\t inserted_at"
+    partitioned_checks_timestamp_source: ingestion_timestamp
+  checks:
+    timeliness:
+      days_since_most_recent_event:
+        error:
+          max_days: 2.0
+        warning:
+          max_days: 1.0
+        fatal:
+          max_days: 3.0
+  columns: {}
