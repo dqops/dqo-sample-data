@@ -29,7 +29,7 @@ spec:
           fatal:
             max_days: 2.0
   schedule_override:
-    cron_expression: ""
+    cron_expression: 0 9 * * *
   columns:
     hash:
       type_snapshot:
