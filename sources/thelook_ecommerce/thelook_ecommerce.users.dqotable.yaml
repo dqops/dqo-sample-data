@@ -7,10 +7,6 @@ spec:
     table_name: users
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
-  data_streams:
-    level_1:
-      source: column_value
-      column: country
   columns:
     id:
       type_snapshot:
@@ -18,17 +14,17 @@ spec:
         nullable: true
       checks:
         numeric:
-          max_negative_count:
+          negative_count:
             error:
               max_count: 10
         strings:
-          max_string_null_placeholder_count:
+          string_null_placeholder_count:
             disabled: true
             error:
               max_count: 10
             fatal:
               max_count: 50
-          max_string_null_placeholder_percent:
+          string_null_placeholder_percent:
             disabled: true
             error:
               max_percent: 2.0
@@ -86,7 +82,7 @@ spec:
         nullable: true
       checks:
         nulls:
-          max_nulls_count:
+          nulls_count:
             error:
               max_count: 20
             warning:
@@ -94,7 +90,7 @@ spec:
             fatal:
               max_count: 40
         numeric:
-          max_negative_count:
+          negative_count:
             disabled: true
             error:
               max_count: 10
@@ -103,14 +99,14 @@ spec:
             fatal:
               max_count: 20
         strings:
-          max_string_length_below:
+          string_max_length:
             error:
               max_value: 2.0
             warning:
               max_value: 1.0
             fatal:
               max_value: 5.0
-          min_string_length_above:
+          string_min_length:
             error:
               min_value: 2.0
             warning:

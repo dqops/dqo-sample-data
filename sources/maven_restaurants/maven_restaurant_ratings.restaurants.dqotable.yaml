@@ -31,7 +31,7 @@ spec:
         nullable: true
       checks:
         strings:
-          min_regex_match_percent:
+          string_match_regex_percent:
             parameters:
               regex: Mexico
             error:

@@ -12,7 +12,7 @@ spec:
   checkpoints:
     daily:
       standard:
-        daily_checkpoint_min_row_count:
+        daily_checkpoint_row_count:
           error:
             min_count: 2
           warning:

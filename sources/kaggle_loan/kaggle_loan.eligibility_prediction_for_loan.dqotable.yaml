@@ -42,7 +42,7 @@ spec:
         nullable: true
       checks:
         numeric:
-          min_values_in_range_numeric_percent:
+          values_in_range_numeric_percent:
             parameters:
               min_value: 0.0
               max_value: 6000.0

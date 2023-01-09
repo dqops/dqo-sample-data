@@ -10,7 +10,7 @@ spec:
   checkpoints:
     daily:
       standard:
-        daily_checkpoint_min_row_count:
+        daily_checkpoint_row_count:
           error:
             min_count: 0
   columns:
@@ -85,7 +85,7 @@ spec:
       checkpoints:
         daily:
           numeric:
-            daily_checkpoint_min_numbers_in_set_count:
+            daily_checkpoint_numbers_in_set_count:
               parameters:
                 values:
                 - 255
@@ -93,14 +93,14 @@ spec:
                 min_count: 6
               fatal:
                 min_count: 9
-            daily_checkpoint_min_values_in_range_numeric_percent:
+            daily_checkpoint_values_in_range_numeric_percent:
               parameters:
                 min_value: 1.0
                 max_value: 6.0
               error:
                 min_percent: 70.0
           strings:
-            daily_checkpoint_min_string_boolean_placeholder_percent:
+            daily_checkpoint_string_boolean_placeholder_percent:
               error:
                 min_percent: 5.0
               fatal:
