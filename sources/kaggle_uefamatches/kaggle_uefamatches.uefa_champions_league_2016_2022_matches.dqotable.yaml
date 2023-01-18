@@ -6,6 +6,7 @@ spec:
     schema_name: kaggle_uefamatches
     table_name: uefa_champions_league_2016_2022_matches
   timestamp_columns:
+    event_timestamp_column: matchday
     partitioned_checks_timestamp_source: event_timestamp
   checkpoints:
     daily:

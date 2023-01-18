@@ -8,6 +8,8 @@ spec:
   timestamp_columns:
     event_timestamp_column: Drink_Level
     partitioned_checks_timestamp_source: event_timestamp
+  schedule_override:
+    cron_expression: 15 9 * * *
   columns:
     Consumer_ID:
       type_snapshot:
@@ -45,6 +47,52 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
+      checks:
+        nulls:
+          nulls_count:
+            error:
+              max_count: 5
+            fatal:
+              max_count: 10
+          nulls_percent:
+            error:
+              max_percent: 5.0
+            fatal:
+              max_percent: 10.0
+        strings:
+          string_max_length:
+            error:
+              max_value: 7.0
+          string_min_length:
+            error:
+              min_value: 3.0
+        uniqueness:
+          unique_count:
+            error:
+              min_count: 5
+          duplicate_count:
+            error:
+              max_count: 50
+            fatal:
+              max_count: 100
+          duplicate_percent:
+            error:
+              max_percent: 20.0
+            fatal:
+              max_percent: 30.0
+      checkpoints:
+        daily:
+          nulls:
+            daily_checkpoint_nulls_count:
+              error:
+                max_count: 5
+              fatal:
+                max_count: 10
+            daily_checkpoint_nulls_percent:
+              error:
+                max_percent: 5.0
+              fatal:
+                max_percent: 10.0
     Marital_Status:
       type_snapshot:
         column_type: STRING

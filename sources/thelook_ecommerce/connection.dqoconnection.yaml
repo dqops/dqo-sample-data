@@ -10,6 +10,6 @@ spec:
     quota_project_id: dqo-ai-testing
   time_zone: UTC
   schedule:
-    cron_expression: 15 15 * * *
+    cron_expression: 15 9 * * *
   labels:
   - test

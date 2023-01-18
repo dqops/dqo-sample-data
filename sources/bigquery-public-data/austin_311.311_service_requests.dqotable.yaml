@@ -8,6 +8,7 @@ spec:
   filter: created_date >= '2022-07-01'
   timestamp_columns:
     event_timestamp_column: created_date
+    ingestion_timestamp_column: close_date
     partitioned_checks_timestamp_source: event_timestamp
   checkpoints:
     daily:
@@ -20,11 +21,12 @@ spec:
       standard:
         daily_partition_row_count:
           error:
-            min_count: 600
-          warning:
-            min_count: 800
-          fatal:
-            min_count: 300
+            min_count: 10
+    monthly:
+      standard:
+        monthly_partition_min_row_count:
+          error:
+            min_count: 10
   columns:
     unique_key:
       type_snapshot:

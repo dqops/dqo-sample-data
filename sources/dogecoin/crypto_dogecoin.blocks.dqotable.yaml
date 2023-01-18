@@ -61,6 +61,55 @@ spec:
                 max_percent: 2.0
               fatal:
                 max_percent: 10.0
+        monthly:
+          nulls:
+            monthly_checkpoint_nulls_count:
+              error:
+                max_count: 6
+              warning:
+                max_count: 4
+              fatal:
+                max_count: 9
+            monthly_checkpoint_nulls_percent:
+              error:
+                max_percent: 2.0
+              warning:
+                max_percent: 1.0
+              fatal:
+                max_percent: 5.0
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              error:
+                max_count: 6
+              warning:
+                max_count: 4
+              fatal:
+                max_count: 9
+            daily_partition_nulls_percent:
+              error:
+                max_percent: 2.0
+              warning:
+                max_percent: 1.0
+              fatal:
+                max_percent: 5.0
+        monthly:
+          nulls:
+            monthly_partition_nulls_count:
+              error:
+                max_count: 6
+              warning:
+                max_count: 4
+              fatal:
+                max_count: 9
+            monthly_partition_nulls_percent:
+              error:
+                max_percent: 9.0
+              warning:
+                max_percent: 1.0
+              fatal:
+                max_percent: 5.0
     stripped_size:
       type_snapshot:
         column_type: INT64
@@ -73,6 +122,22 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: false
+      checks:
+        nulls:
+          nulls_count:
+            error:
+              max_count: 6
+            warning:
+              max_count: 4
+            fatal:
+              max_count: 9
+          nulls_percent:
+            error:
+              max_percent: 2.0
+            warning:
+              max_percent: 1.0
+            fatal:
+              max_percent: 5.0
       checkpoints:
         daily:
           nulls:

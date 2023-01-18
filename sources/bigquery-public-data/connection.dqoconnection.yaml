@@ -15,4 +15,4 @@ spec:
       source: tag
       tag: test2
   schedule:
-    cron_expression: 15 15 * * *
+    cron_expression: 15 9 * * *
