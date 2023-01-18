@@ -3,71 +3,64 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: dqo_testing_time_lag
-    table_name: crypto_dogecoin
+    schema_name: dqo_ai_test_data
+    table_name: string_test_data_2134072162777807894
   timestamp_columns:
-    event_timestamp_column: timestamp
-    ingestion_timestamp_column: inserted_at
     partitioned_checks_timestamp_source: event_timestamp
-  checks:
-    standard:
-      row_count:
-        warning:
-          min_count: 100000
   columns:
-    hash:
-      type_snapshot:
-        column_type: STRING
-        nullable: false
-    size:
+    id:
       type_snapshot:
         column_type: INT64
         nullable: true
-    stripped_size:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    weight:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    number:
-      type_snapshot:
-        column_type: INT64
-        nullable: false
-    version:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    merkle_root:
+    email:
       type_snapshot:
         column_type: STRING
         nullable: true
-    timestamp:
+    email_ok:
       type_snapshot:
-        column_type: TIMESTAMP
-        nullable: false
-    timestamp_month:
+        column_type: INT64
+        nullable: true
+    surrounded_by_whitespace:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    surrounded_by_whitespace_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    null_placeholder:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    null_placeholder_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    boolean_placeholder:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    boolean_placeholder_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    empty_percent:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    empty_percent_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    range_numeric:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    range_integers:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    date:
       type_snapshot:
         column_type: DATE
-        nullable: false
-    nonce:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    bits:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    coinbase_param:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    transaction_count:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    inserted_at:
-      type_snapshot:
-        column_type: TIMESTAMP
         nullable: true

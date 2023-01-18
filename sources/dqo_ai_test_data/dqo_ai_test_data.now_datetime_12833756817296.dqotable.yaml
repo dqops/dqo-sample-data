@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_ai_test_data
+    table_name: now_datetime_12833756817296
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    datetime_col:
+      type_snapshot:
+        column_type: DATETIME
+        nullable: true
+    date_col:
+      type_snapshot:
+        column_type: DATE
+        nullable: true

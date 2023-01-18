@@ -3,41 +3,36 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: kaggle_shirtsizes
-    table_name: shirt_sizes
+    schema_name: dqo_ai_test_data
+    table_name: test_data_values_in_set_7722004775138516608
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
   columns:
-    BrandName:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    length_int:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    length_string:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Type:
+    mix_string_int:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Size:
-      type_snapshot:
-        column_type: FLOAT64
-        nullable: true
-    BrandSize:
+    strings_with_numbers:
       type_snapshot:
         column_type: STRING
         nullable: true
-    Chest:
+    mix_with_missing_data:
       type_snapshot:
-        column_type: FLOAT64
+        column_type: STRING
         nullable: true
-    FrontLength:
+    empty_column:
       type_snapshot:
-        column_type: FLOAT64
+        column_type: STRING
         nullable: true
-    AcrossShoulder:
-      type_snapshot:
-        column_type: FLOAT64
-        nullable: true
-  comments:
-  - date: 2022-12-06T12:37:19.864+00:00
-    comment_by: user
-    comment: "https://www.kaggle.com/datasets/saikumartamminana/shirt-size-recommendation;\
-      \ Author:  SAIKUMAR TAMMINANA"

@@ -5,31 +5,8 @@ spec:
   target:
     schema_name: dqo_testing_time_lag
     table_name: crypto_dash
-  filter: '`timestamp`>="2022-11-20"'
   timestamp_columns:
-    event_timestamp_column: timestamp
-    ingestion_timestamp_column: inserted_at
     partitioned_checks_timestamp_source: event_timestamp
-  checkpoints:
-    daily:
-      timeliness:
-        daily_checkpoint_days_since_most_recent_event:
-          error:
-            max_days: 1.0
-          fatal:
-            max_days: 2.0
-        daily_checkpoint_data_ingestion_delay:
-          error:
-            max_days: 1.0
-          fatal:
-            max_days: 2.0
-        daily_checkpoint_days_since_most_recent_ingestion:
-          error:
-            max_days: 1.0
-          fatal:
-            max_days: 2.0
-  schedule_override:
-    cron_expression: 0 9 * * *
   columns:
     hash:
       type_snapshot:

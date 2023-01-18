@@ -3,41 +3,36 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: kaggle_shirtsizes
-    table_name: shirt_sizes
+    schema_name: dqo_ai_test_data
+    table_name: test_average_goog_8863335308813025204
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
   columns:
-    BrandName:
+    Date:
       type_snapshot:
-        column_type: STRING
+        column_type: DATE
         nullable: true
-    Type:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    Size:
+    Open:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    BrandSize:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    Chest:
+    High:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    FrontLength:
+    Low:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    AcrossShoulder:
+    Close:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-  comments:
-  - date: 2022-12-06T12:37:19.864+00:00
-    comment_by: user
-    comment: "https://www.kaggle.com/datasets/saikumartamminana/shirt-size-recommendation;\
-      \ Author:  SAIKUMAR TAMMINANA"
+    Volume:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Column:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true

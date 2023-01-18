@@ -3,71 +3,64 @@ apiVersion: dqo/v1
 kind: table
 spec:
   target:
-    schema_name: dqo_testing_time_lag
-    table_name: crypto_dogecoin
+    schema_name: dqo_ai_test_data
+    table_name: nulls_and_uniqueness_3303781671231823558
   timestamp_columns:
-    event_timestamp_column: timestamp
-    ingestion_timestamp_column: inserted_at
     partitioned_checks_timestamp_source: event_timestamp
-  checks:
-    standard:
-      row_count:
-        warning:
-          min_count: 100000
   columns:
-    hash:
-      type_snapshot:
-        column_type: STRING
-        nullable: false
-    size:
+    id:
       type_snapshot:
         column_type: INT64
         nullable: true
-    stripped_size:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    weight:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    number:
-      type_snapshot:
-        column_type: INT64
-        nullable: false
-    version:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    merkle_root:
+    nulls:
       type_snapshot:
         column_type: STRING
         nullable: true
-    timestamp:
+    nulls_ok:
       type_snapshot:
-        column_type: TIMESTAMP
-        nullable: false
-    timestamp_month:
+        column_type: INT64
+        nullable: true
+    unique_count:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    negative:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    usa_phone:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    usa_phone_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    usa_zipcode:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    usa_zipcode_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    valid_country_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    valid_country_code_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    valid_currency_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    valid_currency_code_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    date:
       type_snapshot:
         column_type: DATE
-        nullable: false
-    nonce:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    bits:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    coinbase_param:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    transaction_count:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    inserted_at:
-      type_snapshot:
-        column_type: TIMESTAMP
         nullable: true

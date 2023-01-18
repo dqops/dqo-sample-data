@@ -5,7 +5,11 @@ spec:
   provider_type: bigquery
   bigquery:
     source_project_id: bigquery-public-data
+    billing_project_id: 015FBD-E9AB45-92BA30\t
     authentication_mode: google_application_credentials
+    quota_project_id: dqo-ai-testing
   time_zone: UTC
   schedule:
     cron_expression: 15 15 * * *
+  labels:
+  - test

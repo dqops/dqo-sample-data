@@ -7,12 +7,11 @@ spec:
     table_name: ahr
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
-  checkpoints:
-    daily:
-      standard:
-        daily_checkpoint_row_count:
-          error:
-            min_count: 0
+  checks:
+    standard:
+      row_count:
+        error:
+          min_count: 0
   columns:
     edition:
       type_snapshot:

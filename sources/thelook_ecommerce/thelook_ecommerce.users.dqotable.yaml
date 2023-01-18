@@ -40,6 +40,19 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              error:
+                max_count: 2
+              warning:
+                max_count: 1
+              fatal:
+                max_count: 10
+            daily_partition_nulls_percent:
+              error:
+                max_percent: 2.0
     age:
       type_snapshot:
         column_type: INT64

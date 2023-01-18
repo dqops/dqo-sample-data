@@ -7,5 +7,9 @@ spec:
     source_project_id: dqo-ai-testing
     authentication_mode: google_application_credentials
   time_zone: UTC
+  default_data_stream_mapping:
+    level_1:
+      source: tag
+      tag: asd
   schedule:
     cron_expression: 15 15 * * *
