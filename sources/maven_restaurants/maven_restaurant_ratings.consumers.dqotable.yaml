@@ -8,8 +8,13 @@ spec:
   timestamp_columns:
     event_timestamp_column: Drink_Level
     partitioned_checks_timestamp_source: event_timestamp
-  schedule_override:
-    cron_expression: 15 9 * * *
+  schedules_override:
+    profiling:
+      cron_expression: 15 10 * * *
+    daily:
+      cron_expression: 15 10 * * *
+    monthly:
+      cron_expression: 15 10 * * *
   columns:
     Consumer_ID:
       type_snapshot:

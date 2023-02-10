@@ -9,8 +9,6 @@ spec:
     event_timestamp_column: shipped_at
     ingestion_timestamp_column: created_at
     partitioned_checks_timestamp_source: event_timestamp
-  schedule_override:
-    cron_expression: 15 9 * * *
   columns:
     order_id:
       type_snapshot:
