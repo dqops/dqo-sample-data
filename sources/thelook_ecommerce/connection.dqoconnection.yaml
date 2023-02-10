@@ -11,5 +11,9 @@ spec:
   schedules:
     profiling:
       cron_expression: 0 10 * * *
+    daily:
+      cron_expression: 0 10 * * *
+    monthly:
+      cron_expression: 0 10 * * *
   labels:
   - test

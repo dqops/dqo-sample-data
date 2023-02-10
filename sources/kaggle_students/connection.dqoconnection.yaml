@@ -9,3 +9,7 @@ spec:
   schedules:
     profiling:
       cron_expression: 20 10 * * *
+    daily:
+      cron_expression: 20 10 * * *
+    monthly:
+      cron_expression: 20 10 * * *
