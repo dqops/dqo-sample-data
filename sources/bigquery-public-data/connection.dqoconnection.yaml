@@ -6,18 +6,9 @@ spec:
   bigquery:
     source_project_id: bigquery-public-data
     authentication_mode: google_application_credentials
-  default_data_stream_mapping:
-    level_1:
-      source: tag
-      tag: test
-    level_2:
-      source: tag
-      tag: test2
-  schedule:
-    cron_expression: 15 9 * * *
   schedules:
     profiling:
-      cron_expression: 0 10 * * *
+      cron_expression: 0 12 * * *
     daily:
       cron_expression: 0 12 * * *
     monthly:
