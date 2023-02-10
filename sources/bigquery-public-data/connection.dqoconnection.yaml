@@ -6,7 +6,6 @@ spec:
   bigquery:
     source_project_id: bigquery-public-data
     authentication_mode: google_application_credentials
-  time_zone: UTC
   default_data_stream_mapping:
     level_1:
       source: tag
@@ -16,3 +15,10 @@ spec:
       tag: test2
   schedule:
     cron_expression: 15 9 * * *
+  schedules:
+    profiling:
+      cron_expression: 0 10 * * *
+    daily:
+      cron_expression: 0 12 * * *
+    monthly:
+      cron_expression: 0 12 * * *
