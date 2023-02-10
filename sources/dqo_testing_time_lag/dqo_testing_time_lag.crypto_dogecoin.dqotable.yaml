@@ -87,8 +87,13 @@ spec:
         monthly_partition_days_since_most_recent_ingestion:
           error:
             max_days: 2.0
-  schedule_override:
-    cron_expression: 20 9 * * *
+  schedules_override:
+    profiling:
+      cron_expression: 15 10 * * *
+    daily:
+      cron_expression: 0 10 * * *
+    monthly:
+      cron_expression: 0 10 * * *
   columns:
     hash:
       type_snapshot:

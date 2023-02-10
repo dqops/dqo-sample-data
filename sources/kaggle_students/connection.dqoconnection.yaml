@@ -6,4 +6,6 @@ spec:
   bigquery:
     source_project_id: dqo-ai-testing
     authentication_mode: google_application_credentials
-  time_zone: UTC
+  schedules:
+    profiling:
+      cron_expression: 20 10 * * *

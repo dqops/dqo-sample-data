@@ -7,6 +7,13 @@ spec:
     table_name: covid_live
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
+  schedules_override:
+    profiling:
+      cron_expression: 15 10 * * *
+    daily:
+      cron_expression: 15 10 * * *
+    monthly:
+      cron_expression: 15 10 * * *
   columns:
     Country:
       type_snapshot:

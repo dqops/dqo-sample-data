@@ -6,10 +6,6 @@ spec:
   bigquery:
     source_project_id: dqo-ai-testing
     authentication_mode: google_application_credentials
-  schedule:
-    cron_expression: 15 15 * * *
   schedules:
     profiling:
-      cron_expression: 15 15 * * *
-    daily:
       cron_expression: 15 15 * * *

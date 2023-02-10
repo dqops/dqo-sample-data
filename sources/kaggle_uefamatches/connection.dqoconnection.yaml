@@ -10,12 +10,6 @@ spec:
     level_1:
       source: tag
       tag: asd
-  schedule:
-    cron_expression: 15 15 * * *
   schedules:
     profiling:
-      cron_expression: 15 14 * * *
-    daily:
-      cron_expression: 15 14 * * *
-    monthly:
       cron_expression: 15 15 * * *
