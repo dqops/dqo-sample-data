@@ -96,12 +96,6 @@ spec:
           string_valid_dates_percent:
             error:
               min_percent: 98.0
-          string_valid_usa_zipcode_percent:
-            error:
-              min_percent: 98.0
-          string_valid_usa_phone_percent:
-            error:
-              min_percent: 98.0
           string_valid_country_code_percent:
             error:
               min_percent: 98.0
@@ -111,9 +105,6 @@ spec:
           string_invalid_email_count:
             error:
               max_count: 0
-          string_valid_email_percent:
-            error:
-              min_percent: 98.0
         uniqueness:
           unique_count:
             error:

@@ -98,6 +98,12 @@ spec:
                 max_percent: 5.0
               fatal:
                 max_percent: 10.0
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              error:
+                max_count: 0
     Marital_Status:
       type_snapshot:
         column_type: STRING
@@ -110,6 +116,22 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
+      checks:
+        nulls:
+          nulls_count:
+            error:
+              max_count: 0
+      checkpoints:
+        daily:
+          nulls:
+            daily_checkpoint_nulls_count:
+              error:
+                max_count: 0
+        monthly:
+          nulls:
+            monthly_checkpoint_nulls_count:
+              error:
+                max_count: 0
     Occupation:
       type_snapshot:
         column_type: STRING

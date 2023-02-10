@@ -6,4 +6,7 @@ spec:
   bigquery:
     source_project_id: bigquery-public-data
     authentication_mode: google_application_credentials
-  time_zone: UTC
+  snowflake: {}
+  postgresql:
+    port: 5432
+    ssl: false

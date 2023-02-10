@@ -6,4 +6,7 @@ spec:
   bigquery:
     source_project_id: dqo-ai-testing
     authentication_mode: google_application_credentials
-  time_zone: Asia/Aden
+  snowflake: {}
+  postgresql:
+    port: 5432
+    ssl: false
