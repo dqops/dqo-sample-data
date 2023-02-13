@@ -8,12 +8,3 @@ spec:
     billing_project_id: 015FBD-E9AB45-92BA30\t
     authentication_mode: google_application_credentials
     quota_project_id: dqo-ai-testing
-  schedules:
-    profiling:
-      cron_expression: 0 10 * * *
-    daily:
-      cron_expression: 0 10 * * *
-    monthly:
-      cron_expression: 0 10 * * *
-  labels:
-  - test

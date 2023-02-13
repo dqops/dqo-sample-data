@@ -136,6 +136,9 @@ spec:
             daily_checkpoint_nulls_percent:
               error:
                 max_percent: 2.0
+            daily_checkpoint_not_nulls_count:
+              error:
+                max_count: 0
         monthly:
           nulls:
             monthly_checkpoint_nulls_count:
@@ -145,22 +148,11 @@ spec:
               error:
                 max_percent: 2.0
       partitioned_checks:
-        daily:
-          nulls:
-            daily_partition_nulls_count:
-              error:
-                max_count: 5
-            daily_partition_nulls_percent:
-              error:
-                max_percent: 1.0
         monthly:
           nulls:
             monthly_partition_nulls_count:
               error:
-                max_count: 5
-            monthly_partition_nulls_percent:
-              error:
-                max_percent: 1.0
+                max_count: 0
     merkle_root:
       type_snapshot:
         column_type: STRING

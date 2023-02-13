@@ -49,6 +49,12 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: false
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              error:
+                max_count: 0
     version:
       type_snapshot:
         column_type: INT64
