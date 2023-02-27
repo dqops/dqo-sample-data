@@ -10,21 +10,6 @@ spec:
     event_timestamp_column: created_date
     ingestion_timestamp_column: close_date
     partitioned_checks_timestamp_source: event_timestamp
-  data_streams:
-    City:
-      level_1:
-        source: column_value
-        column: city
-  checkpoints:
-    daily:
-      standard:
-        daily_checkpoint_row_count:
-          error:
-            min_count: 100
-          warning:
-            min_count: 150
-          fatal:
-            min_count: 90
   partitioned_checks:
     daily:
       standard:
