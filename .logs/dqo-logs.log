@@ -1,0 +1,26 @@
+2023-02-24 13:14:08.284 [pool-5-thread-1] ERROR a.d.e.c.CheckExecutionServiceImpl -%PARSER_ERROR[kvp]- Rule comparison/min_count failed to execute: Data quality rule C:\Users\Aleksandra\Desktop\DQO\home\rules\comparison\min_count.py failed to execute, error: Traceback (most recent call last):
+  File "C:\Users\Aleksandra\Desktop\DQO\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+  File "C:\Users\Aleksandra\Desktop\DQO\home\rules\comparison\min_count.py", line 66, in evaluate_rule
+AttributeError: 'ObjectHook' object has no attribute 'min_count'
+ai.dqo.utils.python.PythonExecutionException: Data quality rule C:\Users\Aleksandra\Desktop\DQO\home\rules\comparison\min_count.py failed to execute, error: Traceback (most recent call last):
+  File "C:\Users\Aleksandra\Desktop\DQO\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+  File "C:\Users\Aleksandra\Desktop\DQO\home\rules\comparison\min_count.py", line 66, in evaluate_rule
+AttributeError: 'ObjectHook' object has no attribute 'min_count'
+
+	at ai.dqo.execution.rules.runners.python.PythonRuleRunner.executeRule(PythonRuleRunner.java:83)
+	at ai.dqo.execution.rules.DataQualityRuleRunnerImpl.executeRule(DataQualityRuleRunnerImpl.java:60)
+	at ai.dqo.execution.checks.ruleeval.RuleEvaluationServiceImpl.evaluateRules(RuleEvaluationServiceImpl.java:218)
+	at ai.dqo.execution.checks.CheckExecutionServiceImpl.executeChecksOnTable(CheckExecutionServiceImpl.java:332)
+	at ai.dqo.execution.checks.CheckExecutionServiceImpl.executeChecks(CheckExecutionServiceImpl.java:167)
+	at ai.dqo.execution.checks.RunChecksQueueJob.onExecute(RunChecksQueueJob.java:73)
+	at ai.dqo.execution.checks.RunChecksQueueJob.onExecute(RunChecksQueueJob.java:33)
+	at ai.dqo.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:35)
+	at ai.dqo.core.jobqueue.DqoJobQueueImpl.jobProcessingThreadLoop(DqoJobQueueImpl.java:161)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+

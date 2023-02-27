@@ -1,0 +1,83 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: kaggle_loan
+    table_name: eligibility_prediction_for_loan
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    Loan_ID:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Gender:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Married:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    Dependents:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Education:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Self_Employed:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    ApplicantIncome:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    CoapplicantIncome:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+      checks:
+        nulls:
+          nulls_count:
+            error:
+              max_count: 6
+            warning:
+              max_count: 4
+            fatal:
+              max_count: 9
+          nulls_percent:
+            error:
+              max_percent: 2.0
+            warning:
+              max_percent: 1.0
+            fatal:
+              max_percent: 5.0
+    LoanAmount:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Loan_Amount_Term:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Credit_History:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Property_Area:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Loan_Status:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+  comments:
+  - date: 2022-12-06T12:30:43.816+00:00
+    comment_by: user
+    comment: 'https://www.kaggle.com/datasets/devzohaib/eligibility-prediction-for-loan;
+      Author:DEVZOHAIB '

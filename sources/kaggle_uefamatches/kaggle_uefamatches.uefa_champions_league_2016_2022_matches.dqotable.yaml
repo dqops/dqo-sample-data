@@ -1,0 +1,123 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: kaggle_uefamatches
+    table_name: uefa_champions_league_2016_2022_matches
+  timestamp_columns:
+    event_timestamp_column: matchday
+    partitioned_checks_timestamp_source: event_timestamp
+  checkpoints:
+    daily:
+      standard:
+        daily_checkpoint_row_count:
+          error:
+            min_count: 0
+  partitioned_checks:
+    daily:
+      standard:
+        daily_partition_row_count:
+          error:
+            min_count: 10
+          warning:
+            min_count: 15
+          fatal:
+            min_count: 5
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    datetime:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    team1:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    team2:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    team1_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    team2_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    round:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    score1:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    score2:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    adj_score1:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    adj_score2:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    chances1:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    chances2:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    moves1:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    moves2:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    group:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    matchday:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+      checkpoints:
+        daily:
+          numeric:
+            daily_checkpoint_numbers_in_set_count:
+              parameters:
+                values:
+                - 255
+              error:
+                min_count: 6
+              fatal:
+                min_count: 9
+            daily_checkpoint_values_in_range_numeric_percent:
+              parameters:
+                min_value: 1.0
+                max_value: 6.0
+              error:
+                min_percent: 70.0
+          strings:
+            daily_checkpoint_string_boolean_placeholder_percent:
+              error:
+                min_percent: 5.0
+              fatal:
+                min_percent: 10.0
+  comments:
+  - date: 2022-12-06T13:03:19.459+00:00
+    comment_by: user
+    comment: 'https://www.kaggle.com/datasets/cbxkgl/uefa-champions-league-2016-2022-data;
+      Author:CIBI '

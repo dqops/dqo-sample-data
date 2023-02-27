@@ -1,0 +1,24 @@
+2022-12-14 12:15:25.938 [pool-5-thread-1] ERROR ai.dqo.core.jobqueue.DqoJobQueueImpl -%PARSER_ERROR[kvp]- Failed to execute a job: ai.dqo.execution.checks.CheckExecutionFailedException: Check failed to executeai.dqo.core.jobqueue.DqoQueueJobExecutionException: ai.dqo.execution.checks.CheckExecutionFailedException: Check failed to execute
+	at ai.dqo.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:40)
+	at ai.dqo.core.jobqueue.DqoJobQueueImpl.jobProcessingThreadLoop(DqoJobQueueImpl.java:161)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: ai.dqo.execution.checks.CheckExecutionFailedException: Check failed to execute
+	at ai.dqo.execution.checks.CheckExecutionServiceImpl.executeChecksOnTable(CheckExecutionServiceImpl.java:302)
+	at ai.dqo.execution.checks.CheckExecutionServiceImpl.executeChecks(CheckExecutionServiceImpl.java:153)
+	at ai.dqo.execution.checks.RunChecksQueueJob.onExecute(RunChecksQueueJob.java:73)
+	at ai.dqo.execution.checks.RunChecksQueueJob.onExecute(RunChecksQueueJob.java:33)
+	at ai.dqo.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:35)
+	... 6 common frames omitted
+Caused by: java.lang.IllegalArgumentException: left column must be positive and less than total number of columns
+	at org.springframework.util.Assert.isTrue(Assert.java:121)
+	at org.springframework.shell.table.TableBuilder.addBorder(TableBuilder.java:81)
+	at org.springframework.shell.table.TableBuilder.addInnerBorder(TableBuilder.java:163)
+	at ai.dqo.cli.terminal.TerminalWriterImpl.writeTable(TerminalWriterImpl.java:111)
+	at ai.dqo.execution.checks.progress.DebugCheckExecutionProgressListener.onSensorExecuted(DebugCheckExecutionProgressListener.java:65)
+	at ai.dqo.execution.checks.CheckExecutionServiceImpl.executeChecksOnTable(CheckExecutionServiceImpl.java:246)
+	... 10 common frames omitted
+

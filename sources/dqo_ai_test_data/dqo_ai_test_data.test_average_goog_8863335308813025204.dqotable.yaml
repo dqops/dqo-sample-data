@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_ai_test_data
+    table_name: test_average_goog_8863335308813025204
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    Date:
+      type_snapshot:
+        column_type: DATE
+        nullable: true
+    Open:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    High:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Low:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Close:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Volume:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Column:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true

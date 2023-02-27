@@ -1,0 +1,171 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: maven_restaurant_ratings
+    table_name: restaurants
+  timestamp_columns:
+    event_timestamp_column: Area
+    partitioned_checks_timestamp_source: event_timestamp
+  data_streams:
+    Country:
+      level_1:
+        source: column_value
+        column: Country
+    City:
+      level_1:
+        source: column_value
+        column: City
+  checks:
+    standard:
+      row_count:
+        data_stream: Country
+        error:
+          min_count: 10
+        warning:
+          min_count: 13
+        fatal:
+          min_count: 5
+    timeliness:
+      data_ingestion_delay:
+        data_stream: Country
+        error:
+          max_days: 2.0
+        warning:
+          max_days: 3.0
+        fatal:
+          max_days: 1.0
+    availability:
+      table_availability:
+        data_stream: Country
+        error:
+          max_failures: 5
+        warning:
+          max_failures: 6
+        fatal:
+          max_failures: 3
+  checkpoints:
+    daily:
+      standard:
+        daily_checkpoint_row_count:
+          error:
+            min_count: 100
+          warning:
+            min_count: 150
+          fatal:
+            min_count: 90
+      timeliness:
+        daily_checkpoint_days_since_most_recent_event:
+          data_stream: City
+          error:
+            max_days: 2.0
+          warning:
+            max_days: 3.0
+          fatal:
+            max_days: 1.0
+        daily_checkpoint_data_ingestion_delay:
+          data_stream: City
+          error:
+            max_days: 2.0
+          warning:
+            max_days: 3.0
+          fatal:
+            max_days: 1.0
+        daily_checkpoint_days_since_most_recent_ingestion:
+          data_stream: City
+          error:
+            max_days: 2.0
+          warning:
+            max_days: 3.0
+          fatal:
+            max_days: 1.0
+      availability:
+        daily_checkpoint_table_availability:
+          data_stream: City
+          error:
+            max_failures: 3
+          warning:
+            max_failures: 7
+          fatal:
+            max_failures: 5
+  partitioned_checks:
+    daily:
+      standard:
+        daily_partition_row_count:
+          data_stream: Country
+          error:
+            min_count: 10
+          warning:
+            min_count: 15
+          fatal:
+            min_count: 5
+      availability:
+        daily_partition_table_availability:
+          data_stream: Country
+          error:
+            max_failures: 5
+  columns:
+    Restaurant_ID:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    City:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    State:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Country:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+      checks:
+        strings:
+          string_match_regex_percent:
+            parameters:
+              regex: Mexico
+            error:
+              min_percent: 100.0
+    Zip_Code:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    Latitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Longitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Alcohol_Service:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Smoking_Allowed:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Price:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Franchise:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    Area:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Parking:
+      type_snapshot:
+        column_type: STRING
+        nullable: true

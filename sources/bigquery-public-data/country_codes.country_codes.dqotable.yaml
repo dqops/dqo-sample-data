@@ -9,13 +9,13 @@ spec:
     partitioned_checks_timestamp_source: event_timestamp
   checks:
     standard:
-      min_row_count:
+      row_count:
         error:
           min_count: 249
   checkpoints:
     daily:
       standard:
-        daily_checkpoint_min_row_count:
+        daily_checkpoint_row_count:
           error:
             min_count: 249
   columns:
@@ -25,7 +25,7 @@ spec:
         nullable: true
       checks:
         nulls:
-          max_nulls_count:
+          nulls_count:
             disabled: true
             error:
               max_count: 0

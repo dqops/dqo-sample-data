@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_ai_test_data
+    table_name: test_average_delay_8965394640840902079
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    date1:
+      type_snapshot:
+        column_type: DATETIME
+        nullable: true
+    date2:
+      type_snapshot:
+        column_type: DATETIME
+        nullable: true
+    date3:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    date4:
+      type_snapshot:
+        column_type: DATETIME
+        nullable: true

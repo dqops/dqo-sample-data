@@ -1,0 +1,20 @@
+2023-02-15 11:03:23.276 [pool-5-thread-1] ERROR ai.dqo.core.jobqueue.DqoJobQueueImpl -%PARSER_ERROR[kvp]- Failed to execute a job: ai.dqo.core.filesystem.metadata.FileSystemMetadataFrozenException: Folder is frozenai.dqo.core.filesystem.metadata.FileSystemMetadataFrozenException: Folder is frozen
+	at ai.dqo.core.filesystem.metadata.FolderMetadata.getMutableFolders(FolderMetadata.java:248)
+	at ai.dqo.core.filesystem.metadata.FolderMetadata.detachEmptyFolders(FolderMetadata.java:599)
+	at ai.dqo.core.filesystem.metadata.FolderMetadata.detachEmptyFolders(FolderMetadata.java:586)
+	at ai.dqo.core.filesystem.metadata.FolderMetadata.detachEmptyFolders(FolderMetadata.java:586)
+	at ai.dqo.core.filesystem.synchronization.FileSystemSynchronizationServiceImpl.synchronize(FileSystemSynchronizationServiceImpl.java:120)
+	at ai.dqo.core.dqocloud.synchronization.DqoCloudSynchronizationServiceImpl.synchronizeFolder(DqoCloudSynchronizationServiceImpl.java:100)
+	at ai.dqo.core.dqocloud.synchronization.SynchronizeRootFolderDqoQueueJob.onExecute(SynchronizeRootFolderDqoQueueJob.java:68)
+	at ai.dqo.core.dqocloud.synchronization.SynchronizeRootFolderDqoQueueJob.onExecute(SynchronizeRootFolderDqoQueueJob.java:28)
+	at ai.dqo.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:35)
+	... 6 common frames omitted
+Wrapped by: ai.dqo.core.jobqueue.DqoQueueJobExecutionException: ai.dqo.core.filesystem.metadata.FileSystemMetadataFrozenException: Folder is frozen
+	at ai.dqo.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:40)
+	at ai.dqo.core.jobqueue.DqoJobQueueImpl.jobProcessingThreadLoop(DqoJobQueueImpl.java:161)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+

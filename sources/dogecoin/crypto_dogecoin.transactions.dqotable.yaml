@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: crypto_dogecoin
+    table_name: transactions
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    hash:
+      type_snapshot:
+        column_type: STRING
+        nullable: false
+    size:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    virtual_size:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    version:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    lock_time:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    block_hash:
+      type_snapshot:
+        column_type: STRING
+        nullable: false
+    block_number:
+      type_snapshot:
+        column_type: INT64
+        nullable: false
+    block_timestamp:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: false
+    block_timestamp_month:
+      type_snapshot:
+        column_type: DATE
+        nullable: false
+    input_count:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    output_count:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    input_value:
+      type_snapshot:
+        column_type: NUMERIC
+        nullable: true
+    output_value:
+      type_snapshot:
+        column_type: NUMERIC
+        nullable: true
+    is_coinbase:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    fee:
+      type_snapshot:
+        column_type: NUMERIC
+        nullable: true
+    inputs:
+      type_snapshot:
+        column_type: "ARRAY<STRUCT<index INT64, spent_transaction_hash STRING, spent_output_index\
+          \ INT64, script_asm STRING, script_hex STRING, sequence INT64, required_signatures\
+          \ INT64, type STRING, addresses ARRAY<STRING>, value NUMERIC>>"
+        nullable: false
+    outputs:
+      type_snapshot:
+        column_type: "ARRAY<STRUCT<index INT64, script_asm STRING, script_hex STRING,\
+          \ required_signatures INT64, type STRING, addresses ARRAY<STRING>, value\
+          \ NUMERIC>>"
+        nullable: false

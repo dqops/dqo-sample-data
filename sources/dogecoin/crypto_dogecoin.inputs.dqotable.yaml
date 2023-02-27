@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: crypto_dogecoin
+    table_name: inputs
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    transaction_hash:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    block_hash:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    block_number:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    block_timestamp:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    index:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    spent_transaction_hash:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    spent_output_index:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    script_asm:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    script_hex:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    sequence:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    required_signatures:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    type:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    addresses:
+      type_snapshot:
+        column_type: ARRAY<STRING>
+        nullable: false
+    value:
+      type_snapshot:
+        column_type: NUMERIC
+        nullable: true

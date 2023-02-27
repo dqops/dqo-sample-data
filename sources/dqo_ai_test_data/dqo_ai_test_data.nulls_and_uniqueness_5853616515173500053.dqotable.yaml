@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_ai_test_data
+    table_name: nulls_and_uniqueness_5853616515173500053
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    nulls:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    nulls_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    unique_count:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    negative:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    usa_phone:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    usa_phone_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    usa_zipcode:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    usa_zipcode_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    valid_country_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    valid_country_code_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    valid_currency_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    valid_currency_code_ok:
+      type_snapshot:
+        column_type: INT64
+        nullable: true

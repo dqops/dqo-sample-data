@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_ai_test_data
+    table_name: test_data_regex_sensor_2158258873512177105
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    phone_numbers_mixed:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    correct:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    number_groups:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    email_mixed:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    email_mixed_int:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    email_mixed_groups:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    email_correct:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    email_incorrect:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    length_string:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    length_string_int:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    count_0:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    numerical_type_string_column:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    strings_with_numbers:
+      type_snapshot:
+        column_type: STRING
+        nullable: true

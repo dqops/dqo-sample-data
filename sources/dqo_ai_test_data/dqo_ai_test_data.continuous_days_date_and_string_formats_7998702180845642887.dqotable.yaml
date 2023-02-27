@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_ai_test_data
+    table_name: continuous_days_date_and_string_formats_7998702180845642887
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    valid_string_100:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    valid_string_70:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    date:
+      type_snapshot:
+        column_type: DATE
+        nullable: true
