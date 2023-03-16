@@ -1,0 +1,161 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: thelook_ecommerce
+    table_name: orders
+  timestamp_columns:
+    event_timestamp_column: shipped_at
+    ingestion_timestamp_column: created_at
+    partitioned_checks_timestamp_source: event_timestamp
+  columns:
+    order_id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+      checks:
+        nulls:
+          nulls_count:
+            error:
+              max_count: 0
+          nulls_percent:
+            error:
+              max_percent: 2.0
+        numeric:
+          negative_count:
+            error:
+              max_count: 0
+          negative_percent:
+            error:
+              max_percent: 98.0
+          numbers_in_set_count:
+            error:
+              min_count: 0
+          numbers_in_set_percent:
+            error:
+              min_percent: 2.0
+          values_in_range_numeric_percent:
+            parameters:
+              min_value: 1.0
+              max_value: 1000.0
+            error:
+              min_percent: 2.0
+          values_in_range_integers_percent:
+            parameters:
+              min_value: 1
+              max_value: 1000
+            error:
+              min_percent: 2.0
+          sample_stddev_in_range:
+            error:
+              from: 2.0
+              to: 10.0
+        strings:
+          string_empty_count:
+            error:
+              max_count: 0
+          string_empty_percent:
+            error:
+              max_percent: 2.0
+          string_whitespace_count:
+            error:
+              max_count: 0
+          string_whitespace_percent:
+            error:
+              max_percent: 2.0
+          string_surrounded_by_whitespace_count:
+            error:
+              max_count: 0
+          string_surrounded_by_whitespace_percent:
+            error:
+              max_percent: 2.0
+          string_null_placeholder_count:
+            error:
+              max_count: 0
+          string_null_placeholder_percent:
+            error:
+              max_percent: 2.0
+          string_boolean_placeholder_percent:
+            error:
+              min_percent: 98.0
+          string_parsable_to_integer_percent:
+            error:
+              min_percent: 98.0
+          string_parsable_to_float_percent:
+            error:
+              min_percent: 98.0
+          string_in_set_count:
+            error:
+              min_count: 0
+          string_in_set_percent:
+            error:
+              min_percent: 2.0
+          string_valid_dates_percent:
+            error:
+              min_percent: 98.0
+          string_valid_country_code_percent:
+            error:
+              min_percent: 98.0
+          string_valid_currency_code_percent:
+            error:
+              min_percent: 98.0
+          string_invalid_email_count:
+            error:
+              max_count: 0
+        uniqueness:
+          unique_count:
+            error:
+              min_count: 0
+          duplicate_count:
+            error:
+              max_count: 0
+          duplicate_percent:
+            error:
+              max_percent: 2.0
+        pii:
+          contains_usa_phone_percent:
+            error:
+              max_percent: 2.0
+          contains_usa_zipcode_percent:
+            error:
+              max_percent: 2.0
+        bool:
+          true_percent:
+            error:
+              min_percent: 98.0
+          false_percent:
+            error:
+              min_percent: 98.0
+    user_id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    status:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    gender:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    created_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    returned_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    shipped_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    delivered_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    num_of_item:
+      type_snapshot:
+        column_type: INT64
+        nullable: true

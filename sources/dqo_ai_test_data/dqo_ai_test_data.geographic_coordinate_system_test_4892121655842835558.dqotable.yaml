@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_ai_test_data
+    table_name: geographic_coordinate_system_test_4892121655842835558
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
+  columns:
+    gcs:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    date:
+      type_snapshot:
+        column_type: DATE
+        nullable: true

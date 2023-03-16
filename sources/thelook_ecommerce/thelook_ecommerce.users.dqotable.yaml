@@ -13,6 +13,10 @@ spec:
         column_type: INT64
         nullable: true
       checks:
+        nulls:
+          nulls_count:
+            error:
+              max_count: 0
         numeric:
           negative_count:
             error:

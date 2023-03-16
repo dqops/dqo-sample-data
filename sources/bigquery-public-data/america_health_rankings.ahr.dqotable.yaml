@@ -5,13 +5,32 @@ spec:
   target:
     schema_name: america_health_rankings
     table_name: ahr
-  timestamp_columns:
-    partitioned_checks_timestamp_source: event_timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   checks:
     standard:
-      row_count:
+      row_count: {}
+    timeliness:
+      days_since_most_recent_event:
         error:
-          min_count: 0
+          max_days: 2.0
+  recurring:
+    daily:
+      standard:
+        daily_row_count:
+          error:
+            min_count: 18120
+          warning:
+            min_count: 18156
+          fatal:
+            min_count: 18100
+      timeliness:
+        daily_days_since_most_recent_event: {}
+      availability:
+        daily_table_availability:
+          warning:
+            max_failures: 2
   partitioned_checks:
     daily:
       standard:

@@ -7,6 +7,9 @@ spec:
     table_name: nulls_and_uniqueness_5853616515173500053
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   columns:
     id:
       type_snapshot:

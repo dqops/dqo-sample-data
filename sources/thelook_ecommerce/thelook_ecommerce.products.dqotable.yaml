@@ -12,6 +12,12 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
+      checks:
+        numeric:
+          sample_stddev_in_range:
+            error:
+              from: 1.0
+              to: 10.0
     cost:
       type_snapshot:
         column_type: FLOAT64
@@ -25,6 +31,11 @@ spec:
           nulls_count:
             error:
               max_count: 0
+        numeric:
+          sample_stddev_in_range:
+            error:
+              from: 10.0
+              to: 20.0
     name:
       type_snapshot:
         column_type: STRING
@@ -37,6 +48,23 @@ spec:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              error:
+                max_count: 2
+              warning:
+                max_count: 1
+              fatal:
+                max_count: 10
+            daily_partition_nulls_percent:
+              error:
+                max_percent: 2.0
+              warning:
+                max_percent: 1.0
+              fatal:
+                max_percent: 5.0
     department:
       type_snapshot:
         column_type: STRING
@@ -49,3 +77,9 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
+      checks:
+        numeric:
+          sample_stddev_in_range:
+            error:
+              from: 10.0
+              to: 11.0

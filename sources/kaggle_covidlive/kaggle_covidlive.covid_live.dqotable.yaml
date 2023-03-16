@@ -6,7 +6,41 @@ spec:
     schema_name: kaggle_covidlive
     table_name: covid_live
   timestamp_columns:
+    event_timestamp_column: ActiveCases
+    ingestion_timestamp_column: NewDeaths
     partitioned_checks_timestamp_source: event_timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
+  checks:
+    standard:
+      row_count:
+        data_stream: Country
+        error:
+          min_count: 40
+        warning:
+          min_count: 50
+        fatal:
+          min_count: 20
+    availability:
+      table_availability:
+        error:
+          max_failures: 5
+  checkpoints:
+    daily:
+      standard:
+        daily_checkpoint_row_count:
+          data_stream: Country
+          error:
+            min_count: 2
+          warning:
+            min_count: 10
+          fatal:
+            min_count: 1
+      availability:
+        daily_checkpoint_table_availability:
+          error:
+            max_failures: 5
   schedules_override:
     profiling:
       cron_expression: 15 10 * * *

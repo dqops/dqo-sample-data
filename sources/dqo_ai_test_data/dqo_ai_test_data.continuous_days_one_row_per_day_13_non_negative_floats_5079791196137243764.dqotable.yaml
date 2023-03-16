@@ -7,6 +7,9 @@ spec:
     table_name: continuous_days_one_row_per_day_13_non_negative_floats_5079791196137243764
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   columns:
     id:
       type_snapshot:

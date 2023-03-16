@@ -17,3 +17,7 @@ spec:
       cron_expression: 0 12 * * *
     monthly:
       cron_expression: 0 12 * * *
+  labels:
+  - kknknjk
+  - kjuuju
+  - uukimmki

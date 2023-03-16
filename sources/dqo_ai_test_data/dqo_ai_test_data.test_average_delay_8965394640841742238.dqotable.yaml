@@ -9,12 +9,9 @@ spec:
     event_timestamp_column: date1
     ingestion_timestamp_column: date2
     partitioned_checks_timestamp_source: ingestion_timestamp
-  partitioned_checks:
-    daily:
-      timeliness:
-        daily_partition_reload_lag:
-          error:
-            max_days: 2.0
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   columns:
     id:
       type_snapshot:

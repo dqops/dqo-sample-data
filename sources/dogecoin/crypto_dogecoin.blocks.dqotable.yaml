@@ -9,16 +9,22 @@ spec:
   timestamp_columns:
     event_timestamp_column: timestamp
     partitioned_checks_timestamp_source: event_timestamp
+  data_streams:
+    test2:
+      level_1:
+        source: tag
+        tag: test
+    test:
+      level_1:
+        source: tag
+        tag: tst
   checkpoints:
-    daily:
+    monthly:
       standard:
-        daily_checkpoint_row_count:
+        monthly_checkpoint_row_count:
+          data_stream: new
           error:
-            min_count: 2
-          warning:
-            min_count: 1
-          fatal:
-            min_count: 3
+            min_count: 0
   columns:
     hash:
       type_snapshot:
@@ -61,55 +67,6 @@ spec:
                 max_percent: 2.0
               fatal:
                 max_percent: 10.0
-        monthly:
-          nulls:
-            monthly_checkpoint_nulls_count:
-              error:
-                max_count: 6
-              warning:
-                max_count: 4
-              fatal:
-                max_count: 9
-            monthly_checkpoint_nulls_percent:
-              error:
-                max_percent: 2.0
-              warning:
-                max_percent: 1.0
-              fatal:
-                max_percent: 5.0
-      partitioned_checks:
-        daily:
-          nulls:
-            daily_partition_nulls_count:
-              error:
-                max_count: 6
-              warning:
-                max_count: 4
-              fatal:
-                max_count: 9
-            daily_partition_nulls_percent:
-              error:
-                max_percent: 2.0
-              warning:
-                max_percent: 1.0
-              fatal:
-                max_percent: 5.0
-        monthly:
-          nulls:
-            monthly_partition_nulls_count:
-              error:
-                max_count: 6
-              warning:
-                max_count: 4
-              fatal:
-                max_count: 9
-            monthly_partition_nulls_percent:
-              error:
-                max_percent: 9.0
-              warning:
-                max_percent: 1.0
-              fatal:
-                max_percent: 5.0
     stripped_size:
       type_snapshot:
         column_type: INT64
@@ -122,22 +79,6 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: false
-      checks:
-        nulls:
-          nulls_count:
-            error:
-              max_count: 6
-            warning:
-              max_count: 4
-            fatal:
-              max_count: 9
-          nulls_percent:
-            error:
-              max_percent: 2.0
-            warning:
-              max_percent: 1.0
-            fatal:
-              max_percent: 5.0
       checkpoints:
         daily:
           nulls:
@@ -179,6 +120,25 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
+      checks:
+        nulls:
+          nulls_count:
+            data_stream: new
+            error:
+              max_count: 0
+      checkpoints:
+        daily:
+          nulls:
+            daily_checkpoint_nulls_count:
+              data_stream: new
+              error:
+                max_count: 0
+        monthly:
+          nulls:
+            monthly_checkpoint_nulls_count:
+              data_stream: new
+              error:
+                max_count: 0
     coinbase_param:
       type_snapshot:
         column_type: STRING

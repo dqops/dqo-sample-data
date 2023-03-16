@@ -1,0 +1,127 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_ai_full_test
+    table_name: covid_mobility_timeliness_readings_1
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
+  columns:
+    actual_value:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    expected_value:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    time_period:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    time_gradient:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_1:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_2:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_3:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_4:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_5:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_6:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_7:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_8:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_9:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    dimension_id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    connection_hash:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    connection_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    provider:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    table_hash:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    schema_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    table_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    table_stage:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    column_hash:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    column_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    check_hash:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    check_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    quality_dimension:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    sensor_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    executed_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true
+    duration_ms:
+      type_snapshot:
+        column_type: INT64
+        nullable: true

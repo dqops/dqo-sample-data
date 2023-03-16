@@ -6,7 +6,12 @@ spec:
     schema_name: country_codes
     table_name: country_codes
   timestamp_columns:
-    partitioned_checks_timestamp_source: event_timestamp
+    event_timestamp_column: alpha_2_code
+    ingestion_timestamp_column: alpha_3_code
+    partition_by_column: country_name
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   checks:
     standard:
       row_count:
@@ -18,6 +23,22 @@ spec:
         daily_checkpoint_row_count:
           error:
             min_count: 249
+      timeliness:
+        daily_checkpoint_days_since_most_recent_event:
+          error:
+            max_days: 2.0
+        daily_checkpoint_data_ingestion_delay:
+          error:
+            max_days: 2.0
+        daily_checkpoint_days_since_most_recent_ingestion:
+          error:
+            max_days: 2.0
+  partitioned_checks:
+    daily:
+      standard:
+        daily_partition_row_count:
+          error:
+            min_count: 0
   columns:
     country_name:
       type_snapshot:

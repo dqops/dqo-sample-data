@@ -7,6 +7,9 @@ spec:
     table_name: test_average_goog_8863335308813025204
   timestamp_columns:
     partitioned_checks_timestamp_source: event_timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   columns:
     Date:
       type_snapshot:

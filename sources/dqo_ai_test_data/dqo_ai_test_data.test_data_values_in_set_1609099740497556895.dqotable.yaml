@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  target:
+    schema_name: dqo_ai_test_data
+    table_name: test_data_values_in_set_1609099740497556895
+  timestamp_columns:
+    partitioned_checks_timestamp_source: event_timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    length_int:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    length_string:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    mix_string_int:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    strings_with_numbers:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    mix_of_values:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    correct:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    date:
+      type_snapshot:
+        column_type: DATE
+        nullable: true
+    date_iso:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    date_mdy:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    date_dmy:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    date_ymd:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    date_bdy:
+      type_snapshot:
+        column_type: STRING
+        nullable: true

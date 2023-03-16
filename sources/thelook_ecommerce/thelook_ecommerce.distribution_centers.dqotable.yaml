@@ -12,6 +12,12 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
+      checkpoints:
+        daily:
+          nulls:
+            daily_checkpoint_nulls_count:
+              error:
+                max_count: 0
     name:
       type_snapshot:
         column_type: STRING

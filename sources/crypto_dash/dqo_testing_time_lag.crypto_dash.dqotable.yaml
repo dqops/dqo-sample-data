@@ -10,6 +10,10 @@ spec:
     ingestion_timestamp_column: inserted_at
     partitioned_checks_timestamp_source: event_timestamp
   checks:
+    standard:
+      row_count:
+        error:
+          min_count: 4
     timeliness:
       days_since_most_recent_event:
         error:

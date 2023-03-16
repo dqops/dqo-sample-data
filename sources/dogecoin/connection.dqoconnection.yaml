@@ -10,3 +10,6 @@ spec:
   postgresql:
     port: 5432
     ssl: false
+  schedules:
+    profiling:
+      cron_expression: 0 11 * * *
