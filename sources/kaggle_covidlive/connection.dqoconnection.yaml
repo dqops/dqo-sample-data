@@ -6,6 +6,10 @@ spec:
   bigquery:
     source_project_id: dqo-ai-testing
     authentication_mode: google_application_credentials
+  snowflake: {}
+  postgresql:
+    port: 5432
+    ssl: false
   schedules:
     profiling:
-      cron_expression: 15 15 * * *
+      cron_expression: 0 11 * * *

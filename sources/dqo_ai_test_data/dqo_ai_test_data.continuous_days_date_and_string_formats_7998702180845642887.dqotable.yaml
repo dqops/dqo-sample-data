@@ -2,17 +2,11 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: dqo_ai_test_data
-    table_name: continuous_days_date_and_string_formats_7998702180845642887
+  timestamp_columns:
+    partition_by_column: date
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
-  checks:
-    standard:
-      row_count:
-        error:
-          min_count: 0
   columns:
     valid_string_100:
       type_snapshot:

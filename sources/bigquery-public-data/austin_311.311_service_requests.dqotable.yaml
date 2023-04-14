@@ -2,14 +2,14 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: austin_311
-    table_name: 311_service_requests
   filter: created_date >= '2022-07-01'
   timestamp_columns:
     event_timestamp_column: created_date
     ingestion_timestamp_column: close_date
-    partitioned_checks_timestamp_source: event_timestamp
+    partition_by_column: created_date
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   partitioned_checks:
     daily:
       standard:
@@ -21,6 +21,8 @@ spec:
         monthly_partition_min_row_count:
           error:
             min_count: 10
+  schedules_override:
+    profiling: {}
   columns:
     unique_key:
       type_snapshot:

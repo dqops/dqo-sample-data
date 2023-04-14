@@ -6,11 +6,10 @@ spec:
   bigquery:
     source_project_id: dqo-ai-testing
     authentication_mode: google_application_credentials
-  time_zone: UTC
-  default_data_stream_mapping:
-    level_1:
-      source: tag
-      tag: ""
-    level_2:
-      source: tag
-      tag: ""
+  snowflake: {}
+  postgresql:
+    port: 5432
+    ssl: false
+  schedules:
+    profiling:
+      cron_expression: 0 11 * * *

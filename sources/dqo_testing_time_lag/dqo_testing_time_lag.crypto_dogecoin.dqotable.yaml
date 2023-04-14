@@ -2,22 +2,39 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: dqo_testing_time_lag
-    table_name: crypto_dogecoin
   timestamp_columns:
     event_timestamp_column: timestamp
     ingestion_timestamp_column: inserted_at
-    partitioned_checks_timestamp_source: event_timestamp
-  checks:
-    standard:
-      row_count:
+    partition_by_column: timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
+  profiling_checks:
+    timeliness:
+      days_since_most_recent_event:
         error:
-          min_count: 20
-        warning:
-          min_count: 5
-        fatal:
-          min_count: 100
+          max_days: 1.0
+      data_ingestion_delay:
+        error:
+          max_days: 3.0
+      days_since_most_recent_ingestion:
+        error:
+          max_days: 1.0
+  partitioned_checks:
+    daily:
+      timeliness:
+        daily_partition_days_since_most_recent_event:
+          error:
+            max_days: 2.0
+        daily_partition_data_ingestion_delay:
+          error:
+            max_days: 2.0
+        daily_partition_days_since_most_recent_ingestion:
+          error:
+            max_days: 2.0
+        daily_partition_reload_lag:
+          error:
+            max_days: 2.0
   columns:
     hash:
       type_snapshot:
@@ -27,21 +44,6 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
-      checks:
-        nulls:
-          nulls_count:
-            error:
-              max_count: 50
-            warning:
-              max_count: 10
-            fatal:
-              max_count: 100
-          nulls_percent: {}
-        numeric:
-          sample_stddev_in_range:
-            error:
-              from: -10.0
-              to: 10.0
     stripped_size:
       type_snapshot:
         column_type: INT64
@@ -54,6 +56,12 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: false
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              error:
+                max_count: 10
     version:
       type_snapshot:
         column_type: INT64
@@ -82,17 +90,6 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
-      checkpoints:
-        daily:
-          nulls:
-            daily_checkpoint_nulls_count:
-              error:
-                max_count: 0
-        monthly:
-          nulls:
-            monthly_checkpoint_nulls_count:
-              error:
-                max_count: 0
     transaction_count:
       type_snapshot:
         column_type: INT64

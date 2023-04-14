@@ -2,11 +2,11 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: crypto_dogecoin
-    table_name: transactions
   timestamp_columns:
-    partitioned_checks_timestamp_source: event_timestamp
+    partition_by_column: block_timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   columns:
     hash:
       type_snapshot:

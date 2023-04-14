@@ -2,34 +2,31 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: america_health_rankings
-    table_name: ahr
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
-  checks:
+  profiling_checks:
     standard:
-      row_count: {}
-    timeliness:
-      days_since_most_recent_event:
+      row_count:
         error:
-          max_days: 2.0
-  recurring:
+          min_count: 0
+  recurring_checks:
     daily:
       standard:
         daily_row_count:
-          error:
-            min_count: 18120
           warning:
             min_count: 18156
+          error:
+            min_count: 18120
           fatal:
             min_count: 18100
       timeliness:
-        daily_days_since_most_recent_event: {}
+        daily_days_since_most_recent_event:
+          error:
+            max_days: 2.0
       availability:
         daily_table_availability:
-          warning:
+          error:
             max_failures: 2
   partitioned_checks:
     daily:

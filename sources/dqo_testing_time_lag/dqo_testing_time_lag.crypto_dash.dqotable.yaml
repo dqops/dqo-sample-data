@@ -2,11 +2,13 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: dqo_testing_time_lag
-    table_name: crypto_dash
   timestamp_columns:
-    partitioned_checks_timestamp_source: event_timestamp
+    event_timestamp_column: timestamp
+    ingestion_timestamp_column: inserted_at
+    partition_by_column: timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   columns:
     hash:
       type_snapshot:

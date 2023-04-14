@@ -2,30 +2,13 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: dqo_testing_time_lag
-    table_name: crypto_dash
   timestamp_columns:
     event_timestamp_column: timestamp
     ingestion_timestamp_column: inserted_at
-    partitioned_checks_timestamp_source: event_timestamp
-  checks:
-    standard:
-      row_count:
-        error:
-          min_count: 4
-    timeliness:
-      days_since_most_recent_event:
-        error:
-          max_days: 1.5
-      data_ingestion_delay:
-        error:
-          max_days: 1.0
-      days_since_most_recent_ingestion:
-        error:
-          max_days: 1.0
-        fatal:
-          max_days: 3.0
+    partition_by_column: timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   partitioned_checks:
     daily:
       timeliness:

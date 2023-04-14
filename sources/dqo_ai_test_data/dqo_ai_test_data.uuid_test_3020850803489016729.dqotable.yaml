@@ -2,11 +2,8 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: dqo_ai_test_data
-    table_name: uuid_test_3020850803489016729
   timestamp_columns:
-    partitioned_checks_timestamp_source: event_timestamp
+    partition_by_column: DATE
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1

@@ -2,11 +2,9 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: kaggle_loan
-    table_name: eligibility_prediction_for_loan
-  timestamp_columns:
-    partitioned_checks_timestamp_source: event_timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   columns:
     Loan_ID:
       type_snapshot:
@@ -40,20 +38,20 @@ spec:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-      checks:
+      profiling_checks:
         nulls:
           nulls_count:
-            error:
-              max_count: 6
             warning:
               max_count: 4
+            error:
+              max_count: 6
             fatal:
               max_count: 9
           nulls_percent:
-            error:
-              max_percent: 2.0
             warning:
               max_percent: 1.0
+            error:
+              max_percent: 2.0
             fatal:
               max_percent: 5.0
     LoanAmount:

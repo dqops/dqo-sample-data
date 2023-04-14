@@ -2,11 +2,10 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: kaggle_student_performance
-    table_name: portuguese
-  timestamp_columns:
-    partitioned_checks_timestamp_source: event_timestamp
+  timestamp_columns: {}
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   columns:
     school:
       type_snapshot:

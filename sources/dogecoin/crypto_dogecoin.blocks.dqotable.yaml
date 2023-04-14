@@ -2,29 +2,14 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: crypto_dogecoin
-    table_name: blocks
   filter: '`timestamp`>="2022-11-20"'
   timestamp_columns:
     event_timestamp_column: timestamp
-    partitioned_checks_timestamp_source: event_timestamp
-  data_streams:
-    test2:
-      level_1:
-        source: tag
-        tag: test
-    test:
-      level_1:
-        source: tag
-        tag: tst
-  checkpoints:
-    monthly:
-      standard:
-        monthly_checkpoint_row_count:
-          data_stream: new
-          error:
-            min_count: 0
+    ingestion_timestamp_column: timestamp
+    partition_by_column: timestamp
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
   columns:
     hash:
       type_snapshot:
@@ -34,39 +19,39 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
-      checks:
-        nulls:
-          nulls_count:
-            error:
-              max_count: 3
-            warning:
-              max_count: 0
-            fatal:
-              max_count: 10
-          nulls_percent:
-            error:
-              max_percent: 5.0
-            warning:
-              max_percent: 1.0
-            fatal:
-              max_percent: 10.0
-      checkpoints:
+      partitioned_checks:
         daily:
           nulls:
-            daily_checkpoint_nulls_count:
-              error:
-                max_count: 10
+            daily_partition_nulls_count:
               warning:
-                max_count: 5
+                max_count: 4
+              error:
+                max_count: 6
               fatal:
-                max_count: 15
-            daily_checkpoint_nulls_percent:
-              error:
-                max_percent: 5.0
+                max_count: 9
+            daily_partition_nulls_percent:
               warning:
+                max_percent: 1.0
+              error:
                 max_percent: 2.0
               fatal:
-                max_percent: 10.0
+                max_percent: 5.0
+        monthly:
+          nulls:
+            monthly_partition_nulls_count:
+              warning:
+                max_count: 4
+              error:
+                max_count: 6
+              fatal:
+                max_count: 9
+            monthly_partition_nulls_percent:
+              warning:
+                max_percent: 1.0
+              error:
+                max_percent: 9.0
+              fatal:
+                max_percent: 5.0
     stripped_size:
       type_snapshot:
         column_type: INT64
@@ -79,21 +64,21 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: false
-      checkpoints:
+      recurring_checks:
         daily:
           nulls:
-            daily_checkpoint_nulls_count:
-              error:
-                max_count: 6
+            daily_nulls_count:
               warning:
                 max_count: 4
+              error:
+                max_count: 6
               fatal:
                 max_count: 9
-            daily_checkpoint_nulls_percent:
-              error:
-                max_percent: 2.0
+            daily_nulls_percent:
               warning:
                 max_percent: 1.0
+              error:
+                max_percent: 2.0
               fatal:
                 max_percent: 5.0
     version:
@@ -120,25 +105,6 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
-      checks:
-        nulls:
-          nulls_count:
-            data_stream: new
-            error:
-              max_count: 0
-      checkpoints:
-        daily:
-          nulls:
-            daily_checkpoint_nulls_count:
-              data_stream: new
-              error:
-                max_count: 0
-        monthly:
-          nulls:
-            monthly_checkpoint_nulls_count:
-              data_stream: new
-              error:
-                max_count: 0
     coinbase_param:
       type_snapshot:
         column_type: STRING

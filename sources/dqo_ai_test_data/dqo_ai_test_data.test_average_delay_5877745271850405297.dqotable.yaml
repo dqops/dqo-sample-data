@@ -2,13 +2,10 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  target:
-    schema_name: dqo_ai_test_data
-    table_name: test_average_delay_5877745271850405297
   timestamp_columns:
     event_timestamp_column: date1
     ingestion_timestamp_column: date2
-    partitioned_checks_timestamp_source: event_timestamp
+    partition_by_column: date1
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1

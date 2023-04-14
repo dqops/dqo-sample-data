@@ -17,7 +17,3 @@ spec:
   schedules:
     profiling:
       cron_expression: 15 11 * * *
-    daily:
-      cron_expression: 15 11 * * *
-    monthly:
-      cron_expression: 15 11 * * *
