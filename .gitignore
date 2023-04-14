@@ -3,4 +3,4 @@
 .index/
 .logs/
 .localsettings.dqosettings.yaml
-.export/
+export/
