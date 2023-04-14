@@ -4,12 +4,8 @@ kind: source
 spec:
   provider_type: bigquery
   bigquery:
-    source_project_id: dqo-ai-testing
+    source_project_id: bigquery-public-data
     authentication_mode: google_application_credentials
-  snowflake: {}
-  postgresql:
-    port: 5432
-    ssl: false
   schedules:
     profiling:
-      cron_expression: 15 14 * * *
+      cron_expression: 0 12 * * *

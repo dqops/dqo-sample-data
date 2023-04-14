@@ -1,0 +1,123 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  timestamp_columns:
+    event_timestamp_column: created_at
+    partition_by_column: created_at
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
+  columns:
+    id:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+      recurring_checks:
+        daily:
+          numeric:
+            daily_negative_count:
+              error:
+                max_count: 10
+          strings:
+            daily_string_null_placeholder_count:
+              error:
+                max_count: 10
+              fatal:
+                max_count: 50
+            daily_string_null_placeholder_percent:
+              error:
+                max_percent: 2.0
+    first_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    last_name:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    email:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              warning:
+                max_count: 1
+              error:
+                max_count: 2
+              fatal:
+                max_count: 10
+            daily_partition_nulls_percent:
+              error:
+                max_percent: 2.0
+    age:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+    gender:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    state:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    street_address:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    postal_code:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    city:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    country:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    latitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    longitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    traffic_source:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+      profiling_checks:
+        nulls:
+          nulls_count:
+            warning:
+              max_count: 10
+            error:
+              max_count: 20
+            fatal:
+              max_count: 40
+        strings:
+          string_max_length:
+            warning:
+              max_value: 1.0
+            error:
+              max_value: 2.0
+            fatal:
+              max_value: 5.0
+          string_min_length:
+            warning:
+              min_value: 1.0
+            error:
+              min_value: 2.0
+            fatal:
+              min_value: 5.0
+    created_at:
+      type_snapshot:
+        column_type: TIMESTAMP
+        nullable: true

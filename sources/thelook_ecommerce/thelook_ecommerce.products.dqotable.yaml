@@ -5,63 +5,40 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
-  profiling_checks:
-    standard:
-      row_count:
-        error:
-          min_count: 0
-  recurring_checks:
-    daily:
-      standard:
-        daily_row_count:
-          warning:
-            min_count: 18156
-          error:
-            min_count: 18120
-          fatal:
-            min_count: 18100
-      availability:
-        daily_table_availability:
-          error:
-            max_failures: 2
   columns:
-    edition:
+    id:
       type_snapshot:
         column_type: INT64
         nullable: true
-    report_type:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    measure_name:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    state_name:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    subpopulation:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    value:
+    cost:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    lower_ci:
-      type_snapshot:
-        column_type: FLOAT64
-        nullable: true
-    upper_ci:
-      type_snapshot:
-        column_type: FLOAT64
-        nullable: true
-    source:
+    category:
       type_snapshot:
         column_type: STRING
         nullable: true
-    source_date:
+    name:
       type_snapshot:
         column_type: STRING
+        nullable: true
+    brand:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    retail_price:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    department:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    sku:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    distribution_center_id:
+      type_snapshot:
+        column_type: INT64
         nullable: true

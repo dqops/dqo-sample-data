@@ -5,63 +5,52 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
-  profiling_checks:
-    standard:
-      row_count:
-        error:
-          min_count: 0
-  recurring_checks:
-    daily:
-      standard:
-        daily_row_count:
-          warning:
-            min_count: 18156
-          error:
-            min_count: 18120
-          fatal:
-            min_count: 18100
-      availability:
-        daily_table_availability:
-          error:
-            max_failures: 2
   columns:
-    edition:
+    id:
       type_snapshot:
         column_type: INT64
         nullable: true
-    report_type:
+    product_id:
       type_snapshot:
-        column_type: STRING
+        column_type: INT64
         nullable: true
-    measure_name:
+    created_at:
       type_snapshot:
-        column_type: STRING
+        column_type: TIMESTAMP
         nullable: true
-    state_name:
+    sold_at:
       type_snapshot:
-        column_type: STRING
+        column_type: TIMESTAMP
         nullable: true
-    subpopulation:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    value:
+    cost:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-    lower_ci:
-      type_snapshot:
-        column_type: FLOAT64
-        nullable: true
-    upper_ci:
-      type_snapshot:
-        column_type: FLOAT64
-        nullable: true
-    source:
+    product_category:
       type_snapshot:
         column_type: STRING
         nullable: true
-    source_date:
+    product_name:
       type_snapshot:
         column_type: STRING
+        nullable: true
+    product_brand:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    product_retail_price:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    product_department:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    product_sku:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    product_distribution_center_id:
+      type_snapshot:
+        column_type: INT64
         nullable: true

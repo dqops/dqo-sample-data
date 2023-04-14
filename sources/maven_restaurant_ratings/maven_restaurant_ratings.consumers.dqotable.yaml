@@ -1,0 +1,107 @@
+# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+apiVersion: dqo/v1
+kind: table
+spec:
+  incremental_time_window:
+    daily_partitioning_recent_days: 7
+    monthly_partitioning_recent_months: 1
+  columns:
+    Consumer_ID:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    City:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    State:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Country:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Latitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Longitude:
+      type_snapshot:
+        column_type: FLOAT64
+        nullable: true
+    Smoker:
+      type_snapshot:
+        column_type: BOOL
+        nullable: true
+    Drink_Level:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Transportation_Method:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+      profiling_checks:
+        nulls:
+          nulls_count:
+            error:
+              max_count: 5
+            fatal:
+              max_count: 10
+          nulls_percent:
+            error:
+              max_percent: 5.0
+            fatal:
+              max_percent: 10.0
+        strings:
+          string_max_length:
+            error:
+              max_value: 7.0
+          string_min_length:
+            error:
+              min_value: 3.0
+      recurring_checks:
+        daily:
+          nulls:
+            daily_nulls_count:
+              error:
+                max_count: 5
+              fatal:
+                max_count: 10
+            daily_nulls_percent:
+              error:
+                max_percent: 5.0
+              fatal:
+                max_percent: 10.0
+    Marital_Status:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Children:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Age:
+      type_snapshot:
+        column_type: INT64
+        nullable: true
+      recurring_checks:
+        daily:
+          nulls:
+            daily_nulls_count:
+              error:
+                max_count: 0
+        monthly:
+          nulls:
+            monthly_nulls_count:
+              error:
+                max_count: 0
+    Occupation:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
+    Budget:
+      type_snapshot:
+        column_type: STRING
+        nullable: true
