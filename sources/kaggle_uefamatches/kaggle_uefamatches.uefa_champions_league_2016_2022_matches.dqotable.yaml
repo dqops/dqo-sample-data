@@ -12,7 +12,7 @@ spec:
         tag: asd
   recurring_checks:
     daily:
-      standard:
+      volume:
         daily_row_count:
           error:
             min_count: 0

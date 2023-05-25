@@ -12,17 +12,15 @@ spec:
     monthly_partitioning_recent_months: 1
   partitioned_checks:
     daily:
-      standard:
+      volume:
         daily_partition_row_count:
           error:
             min_count: 10
     monthly:
-      standard:
+      volume:
         monthly_partition_min_row_count:
           error:
             min_count: 10
-  schedules_override:
-    profiling: {}
   columns:
     unique_key:
       type_snapshot:

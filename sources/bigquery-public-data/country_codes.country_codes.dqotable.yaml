@@ -6,13 +6,13 @@ spec:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
   profiling_checks:
-    standard:
+    volume:
       row_count:
         error:
           min_count: 249
   recurring_checks:
     daily:
-      standard:
+      volume:
         daily_row_count:
           error:
             min_count: 249

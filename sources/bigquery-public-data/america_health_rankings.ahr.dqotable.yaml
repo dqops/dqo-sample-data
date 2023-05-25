@@ -6,24 +6,30 @@ spec:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
   profiling_checks:
-    standard:
+    volume:
       row_count:
         error:
           min_count: 0
   recurring_checks:
     daily:
-      standard:
+      volume:
         daily_row_count:
-          warning:
-            min_count: 18156
           error:
-            min_count: 18120
-          fatal:
-            min_count: 18100
+            min_count: 0
       availability:
         daily_table_availability:
           error:
             max_failures: 2
+    monthly:
+      volume:
+        monthly_row_count:
+          error:
+            min_count: 0
+  schedules_override:
+    partitioned_daily:
+      cron_expression: 15 15 * * *
+    partitioned_monthly:
+      cron_expression: 15 15 * * *
   columns:
     edition:
       type_snapshot:

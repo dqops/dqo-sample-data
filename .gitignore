@@ -4,3 +4,7 @@
 .logs/
 .localsettings.dqosettings.yaml
 export/
+.idea/dqo-sample-data.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
