@@ -10,17 +10,48 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
-  partitioned_checks:
+  profiling_checks:
+    schema:
+      column_count:
+        schedule_override:
+          cron_expression: 15 15 * * *
+        warning:
+          expected_value: 8
+  recurring_checks:
     daily:
-      volume:
-        daily_partition_row_count:
+      schema:
+        daily_column_count:
+          warning:
+            expected_value: 7
           error:
-            min_count: 10
+            expected_value: 6
+          fatal:
+            expected_value: 5
+        daily_column_count_changed:
+          warning: {}
+          error: {}
+          fatal: {}
+        daily_column_list_changed:
+          warning: {}
+          error: {}
+          fatal: {}
+        daily_column_list_or_order_changed:
+          warning: {}
+          error: {}
+          fatal: {}
+        daily_column_types_changed:
+          warning: {}
+          error: {}
+          fatal: {}
     monthly:
-      volume:
-        monthly_partition_min_row_count:
+      schema:
+        monthly_column_count:
+          warning:
+            expected_value: 9
           error:
-            min_count: 10
+            expected_value: 8
+          fatal:
+            expected_value: 7
   columns:
     unique_key:
       type_snapshot:

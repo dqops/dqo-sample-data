@@ -5,11 +5,6 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
-  data_streams:
-    default:
-      level_1:
-        source: tag
-        tag: asd
   recurring_checks:
     daily:
       volume:
@@ -88,20 +83,6 @@ spec:
       recurring_checks:
         daily:
           numeric:
-            daily_numbers_in_set_count:
-              parameters:
-                values:
-                - 1
-                - 2
-                - 3
-                - 4
-                - 5
-                - 6
-              error:
-                min_count: 200
             daily_values_in_range_numeric_percent:
-              parameters:
-                min_value: 1.0
-                max_value: 5.0
               error:
-                min_percent: 33.0
+                min_percent: 2.0

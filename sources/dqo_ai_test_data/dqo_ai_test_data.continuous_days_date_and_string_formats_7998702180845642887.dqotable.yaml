@@ -7,6 +7,18 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
+  recurring_checks:
+    daily:
+      volume:
+        daily_row_count:
+          error:
+            min_count: 0
+        daily_row_count_anomaly_60_days:
+          error: {}
+      timeliness:
+        daily_data_freshness:
+          error:
+            max_days: 2.0
   columns:
     valid_string_100:
       type_snapshot:

@@ -9,13 +9,7 @@ spec:
     volume:
       row_count:
         error:
-          min_count: 249
-  recurring_checks:
-    daily:
-      volume:
-        daily_row_count:
-          error:
-            min_count: 249
+          min_count: 0
   columns:
     country_name:
       type_snapshot:

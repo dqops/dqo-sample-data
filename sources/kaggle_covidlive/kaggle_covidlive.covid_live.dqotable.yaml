@@ -5,8 +5,11 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
-  schedules_override:
-    profiling: {}
+  profiling_checks:
+    schema:
+      column_count:
+        error:
+          expected_value: 8
   columns:
     Country:
       type_snapshot:
@@ -20,15 +23,6 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
-      recurring_checks:
-        daily:
-          numeric:
-            daily_numbers_in_set_count:
-              parameters:
-                values:
-                - 20
-              error:
-                min_count: 2
     TotalDeaths:
       type_snapshot:
         column_type: INT64

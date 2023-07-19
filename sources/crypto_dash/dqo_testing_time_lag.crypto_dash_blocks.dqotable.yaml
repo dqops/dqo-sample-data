@@ -54,6 +54,19 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              error:
+                max_count: 10
+          strings:
+            daily_partition_string_max_length:
+              error:
+                max_value: 3.0
+            daily_partition_string_min_length:
+              error:
+                min_value: 7.0
     coinbase_param:
       type_snapshot:
         column_type: STRING

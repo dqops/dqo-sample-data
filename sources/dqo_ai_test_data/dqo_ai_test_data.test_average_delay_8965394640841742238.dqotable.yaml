@@ -24,6 +24,12 @@ spec:
       type_snapshot:
         column_type: DATETIME
         nullable: true
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              error:
+                max_count: 10
     date2:
       type_snapshot:
         column_type: DATETIME

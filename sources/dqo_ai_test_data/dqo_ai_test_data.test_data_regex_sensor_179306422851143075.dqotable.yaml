@@ -2,7 +2,6 @@
 apiVersion: dqo/v1
 kind: table
 spec:
-  timestamp_columns: {}
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
@@ -19,6 +18,12 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
+      partitioned_checks:
+        daily:
+          nulls:
+            daily_partition_nulls_count:
+              error:
+                max_count: 10
     number_groups:
       type_snapshot:
         column_type: STRING

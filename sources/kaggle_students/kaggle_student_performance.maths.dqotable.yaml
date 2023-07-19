@@ -5,6 +5,32 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
+  recurring_checks:
+    daily:
+      schema:
+        daily_column_count:
+          warning:
+            expected_value: 556
+          error:
+            expected_value: 36363
+          fatal:
+            expected_value: 35666
+        daily_column_count_changed:
+          warning: {}
+          error: {}
+          fatal: {}
+        daily_column_list_changed:
+          warning: {}
+          error: {}
+          fatal: {}
+        daily_column_list_or_order_changed:
+          warning: {}
+          error: {}
+          fatal: {}
+        daily_column_types_changed:
+          warning: {}
+          error: {}
+          fatal: {}
   columns:
     school:
       type_snapshot:
