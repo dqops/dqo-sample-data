@@ -6,30 +6,168 @@ spec:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
   profiling_checks:
-    volume:
-      row_count:
+    timeliness:
+      data_freshness:
+        warning:
+          max_days: 1.0
         error:
-          min_count: 0
+          max_days: 2.0
+        fatal:
+          max_days: 3.0
+      data_staleness:
+        warning:
+          max_days: 1.0
+        error:
+          max_days: 2.0
+        fatal:
+          max_days: 3.0
+      data_ingestion_delay:
+        warning:
+          max_days: 1.0
+        error:
+          max_days: 2.0
+        fatal:
+          max_days: 3.0
+    availability:
+      table_availability:
+        error:
+          max_failures: 5
+    schema:
+      column_count:
+        warning:
+          expected_value: 8
+        error:
+          expected_value: 10
+        fatal:
+          expected_value: 12
+      column_count_changed:
+        error: {}
+      column_list_changed:
+        error: {}
+      column_list_or_order_changed:
+        error: {}
+      column_types_changed:
+        error: {}
   recurring_checks:
     daily:
       volume:
         daily_row_count:
+          warning:
+            min_count: 18190
           error:
-            min_count: 0
+            min_count: 18150
+          fatal:
+            min_count: 18100
+        daily_row_count_change:
+          warning:
+            max_percent: 10.0
+          error:
+            max_percent: 20.0
+          fatal:
+            max_percent: 50.0
+        daily_row_count_change_yesterday:
+          warning:
+            max_percent: 10.0
+            exact_day: false
+          error:
+            max_percent: 20.0
+            exact_day: false
+          fatal:
+            max_percent: 50.0
+            exact_day: false
+        daily_row_count_change_7_days:
+          warning:
+            max_percent: 10.0
+            exact_day: false
+          error:
+            max_percent: 20.0
+            exact_day: false
+          fatal:
+            max_percent: 50.0
+            exact_day: false
+        daily_row_count_change_30_days:
+          warning:
+            max_percent: 10.0
+            exact_day: false
+          error:
+            max_percent: 20.0
+            exact_day: false
+          fatal:
+            max_percent: 50.0
+            exact_day: false
+      timeliness:
+        daily_data_freshness:
+          warning:
+            max_days: 1.0
+          error:
+            max_days: 2.0
+          fatal:
+            max_days: 3.0
+        daily_data_staleness:
+          warning:
+            max_days: 1.0
+          error:
+            max_days: 2.0
+          fatal:
+            max_days: 3.0
+        daily_data_ingestion_delay:
+          warning:
+            max_days: 1.0
+          error:
+            max_days: 2.0
+          fatal:
+            max_days: 3.0
+      sql:
+        daily_sql_condition_passed_percent_on_table:
+          error:
+            min_percent: 99.0
+        daily_sql_condition_failed_count_on_table:
+          error:
+            max_count: 10
+        daily_sql_aggregate_expr_table:
+          error: {}
       availability:
         daily_table_availability:
           error:
-            max_failures: 2
+            max_failures: 5
+      schema:
+        daily_column_count:
+          error: {}
+        daily_column_count_changed:
+          warning: {}
+          error: {}
+          fatal: {}
+        daily_column_list_changed:
+          warning: {}
+          error: {}
+          fatal: {}
+        daily_column_list_or_order_changed:
+          warning: {}
+          error: {}
+          fatal: {}
+        daily_column_types_changed:
+          warning: {}
+          error: {}
+          fatal: {}
     monthly:
       volume:
         monthly_row_count:
           error:
             min_count: 0
-  schedules_override:
-    partitioned_daily:
-      cron_expression: 15 15 * * *
-    partitioned_monthly:
-      cron_expression: 15 15 * * *
+        monthly_row_count_change:
+          error:
+            max_percent: 20.0
+      schema:
+        monthly_column_count:
+          error: {}
+        monthly_column_count_changed:
+          error: {}
+        monthly_column_list_changed:
+          error: {}
+        monthly_column_list_or_order_changed:
+          error: {}
+        monthly_column_types_changed:
+          error: {}
   columns:
     edition:
       type_snapshot:
