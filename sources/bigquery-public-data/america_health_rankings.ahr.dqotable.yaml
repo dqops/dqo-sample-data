@@ -7,21 +7,21 @@ spec:
     monthly_partitioning_recent_months: 1
   profiling_checks:
     timeliness:
-      data_freshness:
+      profile_data_freshness:
         warning:
           max_days: 1.0
         error:
           max_days: 2.0
         fatal:
           max_days: 3.0
-      data_staleness:
+      profile_data_staleness:
         warning:
           max_days: 1.0
         error:
           max_days: 2.0
         fatal:
           max_days: 3.0
-      data_ingestion_delay:
+      profile_data_ingestion_delay:
         warning:
           max_days: 1.0
         error:
@@ -29,24 +29,24 @@ spec:
         fatal:
           max_days: 3.0
     availability:
-      table_availability:
+      profile_table_availability:
         error:
           max_failures: 5
     schema:
-      column_count:
+      profile_column_count:
         warning:
           expected_value: 8
         error:
           expected_value: 10
         fatal:
           expected_value: 12
-      column_count_changed:
+      profile_column_count_changed:
         error: {}
-      column_list_changed:
+      profile_column_list_changed:
         error: {}
-      column_list_or_order_changed:
+      profile_column_list_or_order_changed:
         error: {}
-      column_types_changed:
+      profile_column_types_changed:
         error: {}
   recurring_checks:
     daily:

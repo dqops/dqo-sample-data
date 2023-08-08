@@ -11,7 +11,7 @@ spec:
     monthly_partitioning_recent_months: 1
   profiling_checks:
     schema:
-      column_count:
+      profile_column_count:
         error:
           expected_value: 10
   partitioned_checks:
@@ -77,83 +77,83 @@ spec:
         nullable: true
       profiling_checks:
         nulls:
-          nulls_count:
+          profile_nulls_count:
             error:
               max_count: 10
-          nulls_percent:
+          profile_nulls_percent:
             error:
               max_percent: 2.0
         numeric:
-          negative_count:
+          profile_negative_count:
             error:
               max_count: 10
-          negative_percent:
+          profile_negative_percent:
             error:
               max_percent: 2.0
-          non_negative_count:
+          profile_non_negative_count:
             error:
               max_count: 10
-          non_negative_percent:
+          profile_non_negative_percent:
             error:
               max_percent: 99.0
-          expected_numbers_in_use_count:
+          profile_expected_numbers_in_use_count:
             error:
               max_missing: 1
         strings:
-          string_max_length:
+          profile_string_max_length:
             error:
               max_value: 60.0
-          string_min_length:
+          profile_string_min_length:
             error:
               min_value: 4.0
-          string_mean_length:
+          profile_string_mean_length:
             error:
               from: 4.0
               to: 40.0
-          string_empty_count:
+          profile_string_empty_count:
             error:
               max_count: 10
-          string_empty_percent:
+          profile_string_empty_percent:
             error:
               max_percent: 2.0
         uniqueness:
-          distinct_count:
+          profile_distinct_count:
             error:
               min_count: 0
-          distinct_percent:
+          profile_distinct_percent:
             error:
               min_percent: 99.0
-          duplicate_count:
+          profile_duplicate_count:
             error:
               max_count: 0
         datetime:
-          date_values_in_future_percent:
+          profile_date_values_in_future_percent:
             error:
               max_percent: 2.0
         pii:
-          valid_usa_phone_percent:
+          profile_valid_usa_phone_percent:
             error:
               min_percent: 99.0
-          contains_usa_phone_percent:
+          profile_contains_usa_phone_percent:
             error:
               max_percent: 2.0
-          valid_usa_zipcode_percent:
+          profile_valid_usa_zipcode_percent:
             error:
               min_percent: 99.0
-          contains_usa_zipcode_percent:
+          profile_contains_usa_zipcode_percent:
             error:
               max_percent: 2.0
-          valid_email_percent:
+          profile_valid_email_percent:
             error:
               min_percent: 99.0
-          contains_email_percent:
+          profile_contains_email_percent:
             error:
               min_percent: 99.0
         bool:
-          true_percent:
+          profile_true_percent:
             error:
               min_percent: 99.0
-          false_percent:
+          profile_false_percent:
             error:
               min_percent: 99.0
     coinbase_param:

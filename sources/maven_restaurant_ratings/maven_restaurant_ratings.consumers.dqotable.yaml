@@ -10,6 +10,15 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
+      profiling_checks:
+        uniqueness:
+          profile_distinct_percent:
+            warning:
+              min_percent: 100.0
+            error:
+              min_percent: 99.0
+            fatal:
+              min_percent: 95.0
     City:
       type_snapshot:
         column_type: STRING
@@ -44,21 +53,21 @@ spec:
         nullable: true
       profiling_checks:
         nulls:
-          nulls_count:
+          profile_nulls_count:
             error:
               max_count: 5
             fatal:
               max_count: 10
-          nulls_percent:
+          profile_nulls_percent:
             error:
               max_percent: 5.0
             fatal:
               max_percent: 10.0
         strings:
-          string_max_length:
+          profile_string_max_length:
             error:
               max_value: 7.0
-          string_min_length:
+          profile_string_min_length:
             error:
               min_value: 3.0
       recurring_checks:
@@ -86,6 +95,23 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
+      profiling_checks:
+        nulls:
+          profile_nulls_count:
+            warning:
+              max_count: 0
+            error:
+              max_count: 10
+            fatal:
+              max_count: 15
+        numeric:
+          profile_non_negative_count:
+            error:
+              max_count: 10
+        anomaly:
+          profile_mean_change:
+            error:
+              max_percent: 20.0
       recurring_checks:
         daily:
           nulls:

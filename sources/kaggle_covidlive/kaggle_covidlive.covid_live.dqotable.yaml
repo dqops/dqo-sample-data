@@ -7,7 +7,7 @@ spec:
     monthly_partitioning_recent_months: 1
   profiling_checks:
     schema:
-      column_count:
+      profile_column_count:
         error:
           expected_value: 8
   columns:

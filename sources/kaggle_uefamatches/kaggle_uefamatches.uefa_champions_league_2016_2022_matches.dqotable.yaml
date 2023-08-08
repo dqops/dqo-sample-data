@@ -11,6 +11,11 @@ spec:
         daily_row_count:
           error:
             min_count: 0
+  schedules_override:
+    profiling:
+      cron_expression: 15 15 * * *
+    recurring_daily:
+      cron_expression: 15 15 * * *
   columns:
     id:
       type_snapshot:

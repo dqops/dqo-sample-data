@@ -46,14 +46,14 @@ spec:
         nullable: true
       profiling_checks:
         nulls:
-          nulls_count:
+          profile_nulls_count:
             warning:
               max_count: 4
             error:
               max_count: 6
             fatal:
               max_count: 9
-          nulls_percent:
+          profile_nulls_percent:
             warning:
               max_percent: 1.0
             error:

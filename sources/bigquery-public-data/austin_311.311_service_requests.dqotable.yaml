@@ -12,7 +12,7 @@ spec:
     monthly_partitioning_recent_months: 1
   profiling_checks:
     schema:
-      column_count:
+      profile_column_count:
         schedule_override:
           cron_expression: 15 15 * * *
         warning:

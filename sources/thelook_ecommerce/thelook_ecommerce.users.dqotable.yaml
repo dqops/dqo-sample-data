@@ -95,7 +95,7 @@ spec:
         nullable: true
       profiling_checks:
         nulls:
-          nulls_count:
+          profile_nulls_count:
             warning:
               max_count: 10
             error:
@@ -103,14 +103,14 @@ spec:
             fatal:
               max_count: 40
         strings:
-          string_max_length:
+          profile_string_max_length:
             warning:
               max_value: 1.0
             error:
               max_value: 2.0
             fatal:
               max_value: 5.0
-          string_min_length:
+          profile_string_min_length:
             warning:
               min_value: 1.0
             error:

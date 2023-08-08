@@ -7,7 +7,7 @@ spec:
     monthly_partitioning_recent_months: 1
   profiling_checks:
     volume:
-      row_count:
+      profile_row_count:
         error:
           min_count: 0
   columns:
@@ -17,7 +17,7 @@ spec:
         nullable: true
       profiling_checks:
         nulls:
-          nulls_count:
+          profile_nulls_count:
             error:
               max_count: 0
       recurring_checks:
