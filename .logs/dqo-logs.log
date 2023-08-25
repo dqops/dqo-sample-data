@@ -31,3 +31,234 @@ IndexError: list index out of range
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
+2023-08-25 10:27:27.857 [pool-5-thread-30] ERROR c.d.e.c.TableCheckExecutionServiceImpl -- Rule change/change_percent failed to execute: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+com.dqops.utils.python.PythonExecutionException: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+
+	at com.dqops.execution.rules.runners.python.PythonRuleRunner.executeRule(PythonRuleRunner.java:83)
+	at com.dqops.execution.rules.DataQualityRuleRunnerImpl.executeRule(DataQualityRuleRunnerImpl.java:66)
+	at com.dqops.execution.checks.ruleeval.RuleEvaluationServiceImpl.evaluateRules(RuleEvaluationServiceImpl.java:202)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeSingleTableChecks(TableCheckExecutionServiceImpl.java:322)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeChecksOnTable(TableCheckExecutionServiceImpl.java:204)
+	at com.dqops.execution.checks.CheckExecutionServiceImpl.executeSelectedChecksOnTable(CheckExecutionServiceImpl.java:233)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:82)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:37)
+	at com.dqops.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:125)
+	at com.dqops.core.jobqueue.BaseDqoJobQueueImpl.jobProcessingThreadLoop(BaseDqoJobQueueImpl.java:190)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2023-08-25 10:27:29.479 [pool-5-thread-41] ERROR c.d.e.c.TableCheckExecutionServiceImpl -- Rule change/change_percent failed to execute: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+com.dqops.utils.python.PythonExecutionException: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+
+	at com.dqops.execution.rules.runners.python.PythonRuleRunner.executeRule(PythonRuleRunner.java:83)
+	at com.dqops.execution.rules.DataQualityRuleRunnerImpl.executeRule(DataQualityRuleRunnerImpl.java:66)
+	at com.dqops.execution.checks.ruleeval.RuleEvaluationServiceImpl.evaluateRules(RuleEvaluationServiceImpl.java:202)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeSingleTableChecks(TableCheckExecutionServiceImpl.java:322)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeChecksOnTable(TableCheckExecutionServiceImpl.java:204)
+	at com.dqops.execution.checks.CheckExecutionServiceImpl.executeSelectedChecksOnTable(CheckExecutionServiceImpl.java:233)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:82)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:37)
+	at com.dqops.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:125)
+	at com.dqops.core.jobqueue.BaseDqoJobQueueImpl.jobProcessingThreadLoop(BaseDqoJobQueueImpl.java:190)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2023-08-25 10:27:29.482 [pool-5-thread-41] ERROR c.d.e.c.TableCheckExecutionServiceImpl -- Rule change/change_percent failed to execute: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+com.dqops.utils.python.PythonExecutionException: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+
+	at com.dqops.execution.rules.runners.python.PythonRuleRunner.executeRule(PythonRuleRunner.java:83)
+	at com.dqops.execution.rules.DataQualityRuleRunnerImpl.executeRule(DataQualityRuleRunnerImpl.java:66)
+	at com.dqops.execution.checks.ruleeval.RuleEvaluationServiceImpl.evaluateRules(RuleEvaluationServiceImpl.java:227)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeSingleTableChecks(TableCheckExecutionServiceImpl.java:322)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeChecksOnTable(TableCheckExecutionServiceImpl.java:204)
+	at com.dqops.execution.checks.CheckExecutionServiceImpl.executeSelectedChecksOnTable(CheckExecutionServiceImpl.java:233)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:82)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:37)
+	at com.dqops.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:125)
+	at com.dqops.core.jobqueue.BaseDqoJobQueueImpl.jobProcessingThreadLoop(BaseDqoJobQueueImpl.java:190)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2023-08-25 10:31:56.282 [pool-5-thread-18] ERROR c.d.e.c.TableCheckExecutionServiceImpl -- Rule change/change_percent failed to execute: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+com.dqops.utils.python.PythonExecutionException: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+
+	at com.dqops.execution.rules.runners.python.PythonRuleRunner.executeRule(PythonRuleRunner.java:83)
+	at com.dqops.execution.rules.DataQualityRuleRunnerImpl.executeRule(DataQualityRuleRunnerImpl.java:66)
+	at com.dqops.execution.checks.ruleeval.RuleEvaluationServiceImpl.evaluateRules(RuleEvaluationServiceImpl.java:227)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeSingleTableChecks(TableCheckExecutionServiceImpl.java:322)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeChecksOnTable(TableCheckExecutionServiceImpl.java:204)
+	at com.dqops.execution.checks.CheckExecutionServiceImpl.executeSelectedChecksOnTable(CheckExecutionServiceImpl.java:233)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:82)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:37)
+	at com.dqops.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:125)
+	at com.dqops.core.jobqueue.BaseDqoJobQueueImpl.jobProcessingThreadLoop(BaseDqoJobQueueImpl.java:190)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2023-08-25 10:31:57.396 [pool-5-thread-45] ERROR c.d.e.c.TableCheckExecutionServiceImpl -- Rule change/change_percent failed to execute: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+com.dqops.utils.python.PythonExecutionException: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+
+	at com.dqops.execution.rules.runners.python.PythonRuleRunner.executeRule(PythonRuleRunner.java:83)
+	at com.dqops.execution.rules.DataQualityRuleRunnerImpl.executeRule(DataQualityRuleRunnerImpl.java:66)
+	at com.dqops.execution.checks.ruleeval.RuleEvaluationServiceImpl.evaluateRules(RuleEvaluationServiceImpl.java:202)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeSingleTableChecks(TableCheckExecutionServiceImpl.java:322)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeChecksOnTable(TableCheckExecutionServiceImpl.java:204)
+	at com.dqops.execution.checks.CheckExecutionServiceImpl.executeSelectedChecksOnTable(CheckExecutionServiceImpl.java:233)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:82)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:37)
+	at com.dqops.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:125)
+	at com.dqops.core.jobqueue.BaseDqoJobQueueImpl.jobProcessingThreadLoop(BaseDqoJobQueueImpl.java:190)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2023-08-25 10:31:58.440 [pool-5-thread-48] ERROR c.d.e.c.TableCheckExecutionServiceImpl -- Rule change/change_percent failed to execute: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+com.dqops.utils.python.PythonExecutionException: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+
+	at com.dqops.execution.rules.runners.python.PythonRuleRunner.executeRule(PythonRuleRunner.java:83)
+	at com.dqops.execution.rules.DataQualityRuleRunnerImpl.executeRule(DataQualityRuleRunnerImpl.java:66)
+	at com.dqops.execution.checks.ruleeval.RuleEvaluationServiceImpl.evaluateRules(RuleEvaluationServiceImpl.java:202)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeSingleTableChecks(TableCheckExecutionServiceImpl.java:322)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeChecksOnTable(TableCheckExecutionServiceImpl.java:204)
+	at com.dqops.execution.checks.CheckExecutionServiceImpl.executeSelectedChecksOnTable(CheckExecutionServiceImpl.java:233)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:82)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:37)
+	at com.dqops.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:125)
+	at com.dqops.core.jobqueue.BaseDqoJobQueueImpl.jobProcessingThreadLoop(BaseDqoJobQueueImpl.java:190)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2023-08-25 10:31:58.444 [pool-5-thread-48] ERROR c.d.e.c.TableCheckExecutionServiceImpl -- Rule change/change_percent failed to execute: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+com.dqops.utils.python.PythonExecutionException: Data quality rule C:\dev\dqoado\home\rules\change\change_percent.py failed to execute, error: Traceback (most recent call last):
+  File "C:\dev\dqoado\home\lib\evaluate_rules.py", line 91, in process_rule_request
+    rule_result = rule_function(rule_parameters)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\dqoado\home\rules\change\change_percent.py", line 68, in evaluate_rule
+    previous_readout = filtered[0]
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+
+	at com.dqops.execution.rules.runners.python.PythonRuleRunner.executeRule(PythonRuleRunner.java:83)
+	at com.dqops.execution.rules.DataQualityRuleRunnerImpl.executeRule(DataQualityRuleRunnerImpl.java:66)
+	at com.dqops.execution.checks.ruleeval.RuleEvaluationServiceImpl.evaluateRules(RuleEvaluationServiceImpl.java:227)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeSingleTableChecks(TableCheckExecutionServiceImpl.java:322)
+	at com.dqops.execution.checks.TableCheckExecutionServiceImpl.executeChecksOnTable(TableCheckExecutionServiceImpl.java:204)
+	at com.dqops.execution.checks.CheckExecutionServiceImpl.executeSelectedChecksOnTable(CheckExecutionServiceImpl.java:233)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:82)
+	at com.dqops.execution.checks.jobs.RunChecksOnTableQueueJob.onExecute(RunChecksOnTableQueueJob.java:37)
+	at com.dqops.core.jobqueue.DqoQueueJob.execute(DqoQueueJob.java:125)
+	at com.dqops.core.jobqueue.BaseDqoJobQueueImpl.jobProcessingThreadLoop(BaseDqoJobQueueImpl.java:190)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
