@@ -39,7 +39,7 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
-      recurring_checks:
+      monitoring_checks:
         daily:
           nulls:
             daily_nulls_percent:
@@ -51,7 +51,7 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
-      recurring_checks:
+      monitoring_checks:
         daily:
           strings:
             daily_string_boolean_placeholder_percent:

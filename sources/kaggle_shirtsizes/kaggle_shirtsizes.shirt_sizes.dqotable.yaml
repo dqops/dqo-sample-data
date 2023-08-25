@@ -14,7 +14,7 @@ spec:
       type_snapshot:
         column_type: STRING
         nullable: true
-      recurring_checks:
+      monitoring_checks:
         daily:
           nulls:
             daily_nulls_count:
@@ -28,7 +28,7 @@ spec:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-      recurring_checks:
+      monitoring_checks:
         daily:
           numeric:
             daily_values_in_range_numeric_percent:

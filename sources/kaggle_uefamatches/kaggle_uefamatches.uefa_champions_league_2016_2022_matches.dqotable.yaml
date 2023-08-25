@@ -5,7 +5,7 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
-  recurring_checks:
+  monitoring_checks:
     daily:
       volume:
         daily_row_count:
@@ -14,7 +14,7 @@ spec:
   schedules_override:
     profiling:
       cron_expression: 15 15 * * *
-    recurring_daily:
+    monitoring_daily:
       cron_expression: 15 15 * * *
   columns:
     id:
@@ -85,9 +85,12 @@ spec:
       type_snapshot:
         column_type: FLOAT64
         nullable: true
-      recurring_checks:
+      monitoring_checks:
         daily:
           numeric:
             daily_values_in_range_numeric_percent:
+              parameters:
+                min_value: 1.0
+                max_value: 20.0
               error:
-                min_percent: 2.0
+                min_percent: 40.0

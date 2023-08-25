@@ -13,7 +13,7 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
-      recurring_checks:
+      monitoring_checks:
         daily:
           numeric:
             daily_negative_count:

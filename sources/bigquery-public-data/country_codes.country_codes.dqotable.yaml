@@ -20,7 +20,7 @@ spec:
           profile_nulls_count:
             error:
               max_count: 0
-      recurring_checks:
+      monitoring_checks:
         daily:
           nulls:
             daily_nulls_count:

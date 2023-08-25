@@ -7,7 +7,7 @@ spec:
     source_project_id: dqo-ai-testing
     authentication_mode: google_application_credentials
   schedules:
-    recurring_daily:
+    monitoring_daily:
       cron_expression: 0 17 * * *
     partitioned_daily:
       cron_expression: 0 17 * * *

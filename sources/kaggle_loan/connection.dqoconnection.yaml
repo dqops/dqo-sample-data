@@ -9,9 +9,9 @@ spec:
   schedules:
     profiling:
       cron_expression: 0 10 * * *
-    recurring_daily:
+    monitoring_daily:
       cron_expression: 0 10 * * *
-    recurring_monthly:
+    monitoring_monthly:
       cron_expression: 0 10 * * *
   incident_grouping:
     grouping_level: table_dimension_category

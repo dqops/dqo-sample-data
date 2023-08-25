@@ -17,7 +17,7 @@ spec:
           cron_expression: 15 15 * * *
         warning:
           expected_value: 8
-  recurring_checks:
+  monitoring_checks:
     daily:
       schema:
         daily_column_count:

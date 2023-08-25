@@ -70,7 +70,7 @@ spec:
           profile_string_min_length:
             error:
               min_value: 3.0
-      recurring_checks:
+      monitoring_checks:
         daily:
           nulls:
             daily_nulls_count:
@@ -112,7 +112,7 @@ spec:
           profile_mean_change:
             error:
               max_percent: 20.0
-      recurring_checks:
+      monitoring_checks:
         daily:
           nulls:
             daily_nulls_count:

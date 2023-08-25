@@ -6,28 +6,6 @@ spec:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
   profiling_checks:
-    timeliness:
-      profile_data_freshness:
-        warning:
-          max_days: 1.0
-        error:
-          max_days: 2.0
-        fatal:
-          max_days: 3.0
-      profile_data_staleness:
-        warning:
-          max_days: 1.0
-        error:
-          max_days: 2.0
-        fatal:
-          max_days: 3.0
-      profile_data_ingestion_delay:
-        warning:
-          max_days: 1.0
-        error:
-          max_days: 2.0
-        fatal:
-          max_days: 3.0
     availability:
       profile_table_availability:
         error:
@@ -48,7 +26,7 @@ spec:
         error: {}
       profile_column_types_changed:
         error: {}
-  recurring_checks:
+  monitoring_checks:
     daily:
       volume:
         daily_row_count:
@@ -95,44 +73,14 @@ spec:
           fatal:
             max_percent: 50.0
             exact_day: false
-      timeliness:
-        daily_data_freshness:
-          warning:
-            max_days: 1.0
-          error:
-            max_days: 2.0
-          fatal:
-            max_days: 3.0
-        daily_data_staleness:
-          warning:
-            max_days: 1.0
-          error:
-            max_days: 2.0
-          fatal:
-            max_days: 3.0
-        daily_data_ingestion_delay:
-          warning:
-            max_days: 1.0
-          error:
-            max_days: 2.0
-          fatal:
-            max_days: 3.0
-      sql:
-        daily_sql_condition_passed_percent_on_table:
-          error:
-            min_percent: 99.0
-        daily_sql_condition_failed_count_on_table:
-          error:
-            max_count: 10
-        daily_sql_aggregate_expr_table:
-          error: {}
       availability:
         daily_table_availability:
           error:
             max_failures: 5
       schema:
         daily_column_count:
-          error: {}
+          error:
+            expected_value: 9
         daily_column_count_changed:
           warning: {}
           error: {}
@@ -159,7 +107,10 @@ spec:
             max_percent: 20.0
       schema:
         monthly_column_count:
-          error: {}
+          error:
+            expected_value: 8
+          fatal:
+            expected_value: 10
         monthly_column_count_changed:
           error: {}
         monthly_column_list_changed:

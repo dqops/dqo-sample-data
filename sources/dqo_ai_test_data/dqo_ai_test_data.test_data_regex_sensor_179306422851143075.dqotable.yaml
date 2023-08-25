@@ -18,12 +18,6 @@ spec:
       type_snapshot:
         column_type: INT64
         nullable: true
-      partitioned_checks:
-        daily:
-          nulls:
-            daily_partition_nulls_count:
-              error:
-                max_count: 10
     number_groups:
       type_snapshot:
         column_type: STRING

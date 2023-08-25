@@ -9,9 +9,9 @@ spec:
   schedules:
     profiling:
       cron_expression: 0 11 * * *
-    recurring_daily:
+    monitoring_daily:
       cron_expression: 0 11 * * *
-    recurring_monthly:
+    monitoring_monthly:
       cron_expression: 0 11 * * *
     partitioned_daily:
       cron_expression: 0 11 * * *
