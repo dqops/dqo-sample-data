@@ -11,6 +11,14 @@ spec:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
   profiling_checks:
+    volume:
+      profile_row_count:
+        error:
+          min_count: 0
+    availability:
+      profile_table_availability:
+        error:
+          max_failures: 5
     schema:
       profile_column_count:
         schedule_override:
@@ -19,6 +27,14 @@ spec:
           expected_value: 8
   monitoring_checks:
     daily:
+      accuracy:
+        daily_total_row_count_match_percent:
+          error:
+            max_diff_percent: 1.0
+      availability:
+        daily_table_availability:
+          error:
+            max_failures: 5
       schema:
         daily_column_count:
           warning:
@@ -52,6 +68,12 @@ spec:
             expected_value: 8
           fatal:
             expected_value: 7
+  partitioned_checks:
+    daily:
+      volume:
+        daily_partition_row_count:
+          error:
+            min_count: 0
   columns:
     unique_key:
       type_snapshot:

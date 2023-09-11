@@ -9,6 +9,18 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
+  default_grouping_name: qwert
+  groupings:
+    qwert:
+      level_1:
+        source: column_value
+        column: number
+  partitioned_checks:
+    daily:
+      volume:
+        daily_partition_row_count:
+          fatal:
+            min_count: 900000
   columns:
     hash:
       type_snapshot:

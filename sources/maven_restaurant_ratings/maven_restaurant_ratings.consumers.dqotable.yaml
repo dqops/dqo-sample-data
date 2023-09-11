@@ -5,6 +5,12 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
+  monitoring_checks:
+    daily:
+      schema:
+        daily_column_count:
+          error:
+            expected_value: 90
   columns:
     Consumer_ID:
       type_snapshot:

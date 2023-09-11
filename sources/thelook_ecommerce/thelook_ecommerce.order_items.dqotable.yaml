@@ -2,9 +2,17 @@
 apiVersion: dqo/v1
 kind: table
 spec:
+  timestamp_columns:
+    partition_by_column: created_at
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
+  partitioned_checks:
+    daily:
+      volume:
+        daily_partition_row_count:
+          warning:
+            min_count: 900000000000000000
   columns:
     id:
       type_snapshot:

@@ -8,6 +8,16 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
+  monitoring_checks:
+    daily:
+      volume:
+        daily_row_count:
+          error:
+            min_count: 0
+      availability:
+        daily_table_availability:
+          error:
+            max_failures: 5
   columns:
     id:
       type_snapshot:

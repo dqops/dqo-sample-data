@@ -36,6 +36,12 @@ spec:
           warning: {}
           error: {}
           fatal: {}
+  partitioned_checks:
+    monthly:
+      volume:
+        monthly_partition_row_count_change:
+          error:
+            max_percent: 20.0
   columns:
     hash:
       type_snapshot:

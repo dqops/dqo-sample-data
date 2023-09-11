@@ -5,83 +5,16 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
-  monitoring_checks:
-    monthly:
-      schema:
-        monthly_column_count:
-          error:
-            expected_value: 8
-  columns:
-    Loan_ID:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    Gender:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    Married:
-      type_snapshot:
-        column_type: BOOL
-        nullable: true
-    Dependents:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    Education:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    Self_Employed:
-      type_snapshot:
-        column_type: BOOL
-        nullable: true
-    ApplicantIncome:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    CoapplicantIncome:
-      type_snapshot:
-        column_type: FLOAT64
-        nullable: true
-      profiling_checks:
-        nulls:
-          profile_nulls_count:
-            warning:
-              max_count: 4
-            error:
-              max_count: 6
-            fatal:
-              max_count: 9
-          profile_nulls_percent:
-            warning:
-              max_percent: 1.0
-            error:
-              max_percent: 2.0
-            fatal:
-              max_percent: 5.0
-    LoanAmount:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Loan_Amount_Term:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Credit_History:
-      type_snapshot:
-        column_type: INT64
-        nullable: true
-    Property_Area:
-      type_snapshot:
-        column_type: STRING
-        nullable: true
-    Loan_Status:
-      type_snapshot:
-        column_type: BOOL
-        nullable: true
-  comments:
-  - date: 2022-12-06T12:30:43.816+00:00
-    comment_by: user
-    comment: 'https://www.kaggle.com/datasets/devzohaib/eligibility-prediction-for-loan;
-      Author:DEVZOHAIB '
+  default_grouping_name: qwert
+  groupings:
+    qwert:
+      level_1:
+        source: column_value
+        column: qweerr
+  partitioned_checks:
+    daily:
+      volume:
+        daily_partition_row_count:
+          fatal:
+            min_count: 90000000000000
+  columns: {}

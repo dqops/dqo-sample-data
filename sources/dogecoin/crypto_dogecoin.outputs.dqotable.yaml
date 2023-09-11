@@ -7,6 +7,11 @@ spec:
   incremental_time_window:
     daily_partitioning_recent_days: 7
     monthly_partitioning_recent_months: 1
+  profiling_checks:
+    volume:
+      profile_row_count:
+        fatal:
+          min_count: 99999999999999
   columns:
     transaction_hash:
       type_snapshot:
