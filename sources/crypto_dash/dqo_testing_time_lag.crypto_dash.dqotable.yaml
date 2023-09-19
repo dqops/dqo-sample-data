@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://cloud.dqo.ai/dqo-yaml-schema/TableYaml-schema.json
+# yaml-language-server: $schema=https://cloud.dqops.com/dqo-yaml-schema/TableYaml-schema.json
 apiVersion: dqo/v1
 kind: table
 spec:
@@ -125,9 +125,6 @@ spec:
           profile_contains_usa_zipcode_percent:
             error:
               max_percent: 2.0
-          profile_contains_email_percent:
-            error:
-              min_percent: 99.0
     coinbase_param:
       type_snapshot:
         column_type: STRING
